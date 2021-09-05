@@ -6,7 +6,7 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',    
       email: '',
-      password: ''
+      password: '',
     };
 //     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="error" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -45,14 +45,24 @@ class SessionForm extends React.Component {
 
       render() {
             let username;
-           if (this.props.formType === 'signup') {
-            username = <label>username:
-                        <input type="text"
+            let demoUser;
+           if (this.props.formType === 'Sign-Up') {
+                 username = <div>
+                  <label className="label" htmlFor="username">Username
+                  </label> 
+                       <br/>
+                  <input
+                        className="input"
+                        id="username"
+                        type="text"
                         value={this.state.username}
                         onChange={this.update('username')}
-                        />
-                        </label>  
-            } 
+                       />
+                  </div>
+                         
+           } else {
+                 demoUser = <button className="submit-button" onClick={(e) => this.handleDemoUser(e)}>Demo User</button>
+            }
 
       return (
       <div className="container">
@@ -60,23 +70,29 @@ class SessionForm extends React.Component {
             <h1 className="form-title">{this.props.formType}</h1>
             <h2>{this.renderErrors()}</h2>
             {username}
-            <label htmlFor="email">Email</label>
-              <input 
-                type="text"
-                id="email"
-                value={this.state.email}
-                onChange={this.update('email')}
-              />
-            <label htmlFor="password">Password</label>
-              <input 
-              type="password"
-                id="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-              />
+            <div>
+                  <label className="label" htmlFor="email">Email</label>
+                    <input
+                      className="input"
+                      type="email"
+                      id="email"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                    />
+            </div>
+            <div>
+                  <label className="label" htmlFor="password">Password</label>
+                    <input
+                    className="input"
+                    type="password"
+                      id="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                    />
+            </div>
             <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
-            <button className="submit-button" onClick={(e) => this.handleDemoUser(e)}>Demo User</button>
-          
+            {demoUser}
+            <p className="user-conditions">By continuing, you agree to Amazon's <span>Conditions of Use</span> and <span>Privacy Notice</span>.</p>
         </form>
       </div>
     );
