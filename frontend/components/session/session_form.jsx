@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
       email: '',
       password: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+//     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -21,6 +21,14 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+  handleDemoUser(e) {
+        e.preventDefault();
+        const demo = {
+              username: "Oussama", email: "oussama@amaZone.com", password: "password"
+        };
+        this.setState(demo);
+        this.props.processForm(demo);
   }
 
   renderErrors() {
@@ -47,32 +55,28 @@ class SessionForm extends React.Component {
             } 
 
       return (
-      <div>
-        <form onSubmit={this.handleSubmit} >
-          Welcome to amaZone
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
-          <div >
-             <br/>
-                  {username}
-            <br/>
-            <label>email:
-              <input type="text"
+      <div className="container">
+      <form className="session-form">
+            <h1 className="form-title">{this.props.formType}</h1>
+            <h2>{this.renderErrors()}</h2>
+            {username}
+            <label htmlFor="email">Email</label>
+              <input 
+                type="text"
+                id="email"
                 value={this.state.email}
                 onChange={this.update('email')}
               />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
+            <label htmlFor="password">Password</label>
+              <input 
+              type="password"
+                id="password"
                 value={this.state.password}
                 onChange={this.update('password')}
               />
-            </label>
-            <br/>
-            <input type="submit" value={this.props.formType} />
-          </div>
+            <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
+            <button className="submit-button" onClick={(e) => this.handleDemoUser(e)}>Demo User</button>
+          
         </form>
       </div>
     );
