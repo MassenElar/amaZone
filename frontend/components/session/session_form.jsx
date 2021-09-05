@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../../../amaZoneLogo.png'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -65,35 +66,38 @@ class SessionForm extends React.Component {
             }
 
       return (
-      <div className="container">
-      <form className="session-form">
-            <h1 className="form-title">{this.props.formType}</h1>
-            <h2>{this.renderErrors()}</h2>
-            {username}
-            <div>
-                  <label className="label" htmlFor="email">Email</label>
-                    <input
-                      className="input"
-                      type="email"
-                      id="email"
-                      value={this.state.email}
-                      onChange={this.update('email')}
-                    />
+      <div className="outer-container">
+            <img className="logo" src={logo}></img>
+            <div className="container">
+            <form className="session-form">
+                  <h1 className="form-title">{this.props.formType}</h1>
+                  <h2>{this.renderErrors()}</h2>
+                  {username}
+                  <div>
+                        <label className="label" htmlFor="email">Email</label>
+                          <input
+                            className="input"
+                            type="email"
+                            id="email"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                          />
+                  </div>
+                  <div>
+                        <label className="label" htmlFor="password">Password</label>
+                          <input
+                          className="input"
+                          type="password"
+                            id="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                          />
+                  </div>
+                  <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
+                  {demoUser}
+                  <p className="user-conditions">By continuing, you agree to Amazon's <span>Conditions of Use</span> and <span>Privacy Notice</span>.</p>
+              </form>
             </div>
-            <div>
-                  <label className="label" htmlFor="password">Password</label>
-                    <input
-                    className="input"
-                    type="password"
-                      id="password"
-                      value={this.state.password}
-                      onChange={this.update('password')}
-                    />
-            </div>
-            <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
-            {demoUser}
-            <p className="user-conditions">By continuing, you agree to Amazon's <span>Conditions of Use</span> and <span>Privacy Notice</span>.</p>
-        </form>
       </div>
     );
   }
