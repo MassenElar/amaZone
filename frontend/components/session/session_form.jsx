@@ -96,7 +96,7 @@ class SessionForm extends React.Component {
                   </div>
                   <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
                   {demoUser}
-                  <p className="user-conditions">By continuing, you agree to Amazon's <span>Conditions of Use</span> and <span>Privacy Notice</span>.</p>
+                  <p className="user-conditions">By continuing, you agree to Amazon's <span className="span">Conditions of Use</span> and <span className="span">Privacy Notice</span>.</p>
               </form>
             </div>
       </div>
