@@ -16,15 +16,21 @@ class ProductIndex extends React.Component {
 
       render() {
             return (
-                  <div>
-                        <div className="home-image">
+                  <div className="main-page">
+                        <div className="main-container">
                               <img className="image" src={homeImage}></img>
+                        
+                              <ul className="product-ul">
+                                    {this.props.products.map((product) => (
+                                          <ProductIndexItem key={product.id} product={product}/>
+                                    ))}
+                              </ul>
+                              <ul className="product-ul">
+                                    {this.props.products.map((product) => (
+                                          <ProductIndexItem key={product.id} product={product}/>
+                                    ))}
+                              </ul>
                         </div>
-                        <ul className="product-ul">
-                              {this.props.products.map((product) => (
-                                    <ProductIndexItem key={product.id} product={product}/>
-                              ))}
-                        </ul>
                   </div>
             )
       }

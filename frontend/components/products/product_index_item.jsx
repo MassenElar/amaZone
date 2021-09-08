@@ -23,10 +23,7 @@ class ProductIndexItem extends React.Component {
                                           <strong>{this.props.product.productPrice}</strong>
                                     </p>
                                     <div className="rating">
-                                          <p>⭐️</p>
-                                          <p>⭐️</p>
-                                          <p>⭐️</p>
-                                          <p>⭐️</p>
+                                          <p>⭐️ ⭐️ ⭐️ ⭐️ </p>
                                     </div>
                               </div>
                               <button>Add To Cart</button>

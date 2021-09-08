@@ -9,7 +9,7 @@ import ProductShowContainer from './products/product_show_container'
 
 const App = () => (
   <div>
-        <WelcomeContainer/>
+        <header><WelcomeContainer/></header>
         <Switch>
           <Route exact path="/products/:productId" component={ProductShowContainer}/>
           <Route path="/products" component={ProductIndexContainer} />

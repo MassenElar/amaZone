@@ -8,9 +8,11 @@ class SessionForm extends React.Component {
       username: '',    
       email: '',
       password: '',
-      // repassword: '',
     };
 //     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentWillUnmount() {
+    this.props.clearErrors()
   }
 
   update(field) {
