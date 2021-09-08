@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Phone from '../../../app/assets/images/mate_30.jpg' 
 
 class ProductIndexItem extends React.Component {
       constructor(props) {
@@ -9,13 +10,26 @@ class ProductIndexItem extends React.Component {
 
       render() {
             return (
-                  <li>
-                        <Link to={`/Products/${this.props.product.id}`}>
-                              <h1>{this.props.product.productName}</h1>
-                              <p>{this.props.product.productDescription}</p>
-                              <p>{this.props.product.productName}</p>
-                              <p>{this.props.product.productInventory}</p>
-                              <p>{this.props.product.productPrice}</p>
+                  <li className="product_item">
+                        <Link className="product_link" to={`/Products/${this.props.product.id}`}>
+                              <img src={Phone}></img>
+                              <div className="item-details">
+                                    <h1>{this.props.product.productName}</h1>
+                              
+                                    <p>Inventory:   {this.props.product.productInventory}</p>
+                                    
+                                    <p className="details-price">
+                                          <p>$</p>
+                                          <strong>{this.props.product.productPrice}</strong>
+                                    </p>
+                                    <div className="rating">
+                                          <p>⭐️</p>
+                                          <p>⭐️</p>
+                                          <p>⭐️</p>
+                                          <p>⭐️</p>
+                                    </div>
+                              </div>
+                              <button>Add To Cart</button>
                         </Link>
                   </li>
             )

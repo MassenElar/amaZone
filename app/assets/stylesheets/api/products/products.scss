@@ -1,0 +1,73 @@
+// Place all the styles related to the api/products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.image {
+      width: 100%;
+      z-index: -1;
+      margin-bottom: -150px;
+      mask-image: linear-gradient(to bottom, transparent 10%, white);
+}
+.product_item {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      border: 2px solid;
+      border-radius: 5px;
+      max-height: 500px;
+      min-width: 100px;
+      padding: 10px;
+      background-color: white;
+      z-index: 1;
+      justify-content: flex-end;
+      align-items: center;
+}
+
+.product_link{
+      text-decoration: none;
+      color: black;
+       
+}
+
+.name{
+      font-size: 40px;
+      font-weight: bold;
+}
+
+.details {
+      font-size: 20px;
+}
+
+.product-ul{
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+ }
+
+.product_link > img {
+      max-height: 200px;
+      width: 100px;
+      object-fit: contain;
+      margin-bottom: 15px;
+}
+
+.item-details{
+      height: 100px;
+      margin-bottom: 40px;
+}
+
+.details-price {
+      margin-top: 5px;
+}
+
+.product_link > button {
+      background-color: rgba(240,193,75,1);
+      border: 1px solid;
+      margin-top: 10px;
+      border-radius: 3px;
+      border-color: rgb(227, 184, 74) rgba(240,193,75,1) ;
+      color: black;
+}  
+
+
+

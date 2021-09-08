@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
       end
 
       def ensure_logged_in! 
-            redirect_to api_session_index if current_user.nil?
+            redirect_to api_session_url if current_user.nil?
       end
 end

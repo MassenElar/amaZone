@@ -36,7 +36,7 @@ const Welcome = ({ currentUser, logout }) => {
                         <Link to="/login" className="signin-link">
                                     <div className="signin-menu">
                                     <span className="menu1">{ currentUser ? "Deliver to " + user : "Hello" }</span>
-                                          <span className="menu2"><i class="fa fa-map-marker"></i>Select your address</span>
+                                          <span className="menu2"><i className="fa fa-map-marker"></i>Select your address</span>
                                     </div>
                         </Link>
                         <div className="search">
@@ -58,7 +58,7 @@ const Welcome = ({ currentUser, logout }) => {
                               </Link>
                               <Link to="/products" className="signin-link">
                                     <div className="shopping-cart">
-                                          <i class="fa fa-shopping-cart"></i>
+                                          <i className="fa fa-shopping-cart"></i>
                                     </div>
                               </Link>
                   
