@@ -12,7 +12,6 @@
     "start": "webpack --watch --mode=development",
     "postinstall": "webpack",
     "build": "webpack --mode=production"
-    
   },
   "engines": {
     "node": "10.13.0",
