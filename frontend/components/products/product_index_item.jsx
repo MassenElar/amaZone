@@ -14,7 +14,7 @@ class ProductIndexItem extends React.Component {
                         <Link className="product_link" to={`/Products/${this.props.product.id}`}>
                               <img src={Phone}></img>
                               <div className="item-details">
-                                    <h1>{this.props.product.productName}</h1>
+                                    <h1>{this.props.product.productName.split(" ").slice(0, 5).join(" ")}</h1>
                               
                                     <p>Inventory:   {this.props.product.productInventory}</p>
                                     

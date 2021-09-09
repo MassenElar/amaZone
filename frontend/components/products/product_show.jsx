@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import WelcomeContainer from '../welcome/welcome_container';
 
 
 class ProductShow extends React.Component {
@@ -11,10 +12,13 @@ class ProductShow extends React.Component {
             const { product } = this.props
             return (
                   <div>
-                        <p>{product.productName}</p>
-                        <p>{product.productDescription}</p>
-                        <p>{product.productInventory}</p>
-                        <p>{product.productPrice}</p>
+                        <header><WelcomeContainer/></header>
+                        <div>
+                              <p>{product.productName}</p>
+                              <p>{product.productDescription}</p>
+                              <p>{product.productInventory}</p>
+                              <p>{product.productPrice}</p>
+                        </div>
                   </div>
             )
       }

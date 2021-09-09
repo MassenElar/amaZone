@@ -64,6 +64,7 @@ const Welcome = ({ currentUser, logout }) => {
                   
                         </div>
                   </nav>
+                  
                   {logOutButton}
             </div>
       )
