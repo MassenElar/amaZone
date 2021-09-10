@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../amaZoneLogo1.png'
+// import logo from '../../../amaZoneLogo1.png'
 
 
 const Welcome = ({ currentUser, logout }) => {
@@ -30,8 +30,8 @@ const Welcome = ({ currentUser, logout }) => {
       return (
             <div>
                   <nav className="navbar">
-                        <Link to="/products">
-                              <img src={logo} className="logo"></img>
+                        <Link to="/">
+                              <img src={window.amaZoneLogo1URL} className="logo"></img>
                         </Link>
                         <Link to="/login" className="signin-link">
                                     <div className="signin-menu">
@@ -50,13 +50,17 @@ const Welcome = ({ currentUser, logout }) => {
                                           <span className="menu2">Account & Lists</span>
                                     </div>
                               </Link>
-                              <Link to="/" className="signin-link">
+                              <div  className="signin-link">
                                     <div className="signin-menu">
                                           <span className="menu1">Returns</span>
                                           <span className="menu2">& Orders</span>
                                     </div>
-                              </Link>
-                              <Link to="/products" className="signin-link">
+                                    {/* <div className="dorp-down-list">
+                                          <button>Sign In</button>
+                                          <p>New customer? <span><Link to="signup">Start Here</Link></span></p>
+                                    </div> */}
+                              </div>
+                              <Link to="/" className="signin-link">
                                     <div className="shopping-cart">
                                           <i className="fa fa-shopping-cart"></i>
                                     </div>

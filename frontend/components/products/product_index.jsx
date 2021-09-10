@@ -3,6 +3,7 @@ import ProductIndexItem from "./product_index_item";
 import { Route } from "react-router-dom";
 import  homeImage  from '../../../app/assets/images/nav.jpg'
 import WelcomeContainer from "../welcome/welcome_container";
+import Footer from "../welcome/footer";
 
 
 
@@ -21,7 +22,7 @@ class ProductIndex extends React.Component {
                         <header><WelcomeContainer/></header>
                         <div className="main-page">
                               <div className="main-container">
-                                    <img className="image" src={homeImage}></img>
+                                    <img className="image" src={window.navURL}></img>
                         
                                     <ul className="product-ul">
                                           {this.props.products.map((product) => (
@@ -35,6 +36,7 @@ class ProductIndex extends React.Component {
                                     </ul> */}
                               </div>
                         </div>
+                        <Footer/>
                   </div>
             )
       }

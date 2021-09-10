@@ -6,6 +6,7 @@
       background-color: #131921;
       display: flex;
       align-items: center;
+      gap: 2px;
 }
 
 .logo {
@@ -14,6 +15,7 @@
       margin-top: 5px;
       margin-left: 20px;
       margin-right: 20px;
+      border: 1px solid transparent;
       
 }
 
@@ -62,6 +64,16 @@
 
 .signin-link{
       text-decoration: none;
+      padding-top: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-bottom: 10px;
+      border: 1px solid transparent;
+      
+}
+
+.signin-link > span {
+      position: absolute;
 }
 
 .shopping-cart {
@@ -80,3 +92,26 @@
 .fa-map-marker {
       margin-right: 5px;
 }
+
+.signin-link:hover {
+      border: 1px solid white;
+      display: block;
+}
+.logo:hover {
+      border: 1px solid white;
+}
+
+.dorp-down-list{
+      display: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      min-width: 160px;
+      background-color: #f9f9f9;
+}
+
+
+
+

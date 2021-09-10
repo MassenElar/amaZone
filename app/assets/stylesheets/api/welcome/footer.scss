@@ -1,0 +1,94 @@
+.footer {
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      // width: 1500px;
+      margin: auto;
+      
+}
+
+.footer-signin {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      width: 97%;
+      text-align: center;
+      margin: 30px;
+      padding: 20px;
+      border-bottom: 1px solid lightgrey;
+      border-top: 1px solid lightgrey;
+      
+
+}
+
+.footer-list {
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      padding: 30px;
+      width: 70%;
+}
+
+.footer-links {
+      display: flex;
+      align-content: center;
+}
+.fa-github{
+      font-size: 36px;
+      color: white;
+}
+
+.logo-footer {
+      width: 100px;
+      height: 50px;
+
+}
+
+.fa-linkedin-square{
+      font-size: 36px;
+      color: white;
+}
+
+.footer-items {
+      display: flex;
+      width: 100%;
+      background-color: #131921;
+      flex-direction: column;
+      align-items: center;
+      
+}
+
+
+.back-to-top {
+      color: white;
+      width: 97%;
+      text-align: center;
+      background-color: #232f3e;
+      padding: 20px;
+}
+
+.footer-links {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+}
+
+.botton-footer-link{
+      text-decoration: none;
+      color: black;
+}  
+
+.footer-signin > p{
+      padding: 5px;
+}
+
+.new-cost-footer{
+      font-size: small;
+}
+
+.footer-span {
+      text-decoration: none;
+      color: #146eb4;
+}
+
+
