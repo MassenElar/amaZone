@@ -32,7 +32,7 @@ class Footer extends React.Component {
                         {footerSignin}
                         <div className="footer-items">
                               <div className="back-to-top">
-                                    <p>back to Top</p>
+                                    <p>Back to Top</p>
                               </div>
                               <div className="footer-list">
                                     <ul>
