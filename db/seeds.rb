@@ -30,7 +30,7 @@ product1 = Product.create(
       seller_id: 2,
 
 )
-file1 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/a71.jpg')
+file1 = URI.open("https://amazone-seeds.s3.amazonaws.com/a71.jpg")
 product1.photo.attach(io: file1, filename: 'a71.jpg')
 
 
@@ -47,7 +47,7 @@ product2 = Product.create(
       seller_id: 3,
 
 )
-file2 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/s20_ultra.jpg')
+file2 = URI.open('https://amazone-seeds.s3.amazonaws.com/s20_ultra.jpg')
 product2.photo.attach(io: file2, filename: 's20_ultra.jpg')
 
 product3 = Product.create(
@@ -63,7 +63,7 @@ product3 = Product.create(
       seller_id: 3,
 
 )
-file3 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/huawei_p30_pro.jpg')
+file3 = URI.open('https://amazone-seeds.s3.amazonaws.com/huawei_p30_pro.jpg')
 product3.photo.attach(io: file3, filename: 'huawei_p30_pro.jpg')
 
 
@@ -80,7 +80,7 @@ product4 = Product.create!(
       seller_id: 3,
 
 )
-file4 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/mate_30.jpg')
+file4 = URI.open('https://amazone-seeds.s3.amazonaws.com/mate_30.jpg')
 product4.photo.attach(io: file4, filename: 'mate_30.jpg')
 
 
@@ -99,7 +99,7 @@ product5 = Product.create(
       seller_id: 2,
 
 )
-file5 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/a71.jpg')
+file5 = URI.open('https://amazone-seeds.s3.amazonaws.com/a71.jpg')
 product5.photo.attach(io: file5, filename: 'a71.jpg')
 
 
@@ -116,7 +116,7 @@ product6 = Product.create(
       seller_id: 3,
 
 )
-file6 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/s20_ultra.jpg')
+file6 = URI.open('https://amazone-seeds.s3.amazonaws.com/s20_ultra.jpg')
 product6.photo.attach(io: file6, filename: 's20_ultra.jpg')
 
 product7 = Product.create(
@@ -132,7 +132,7 @@ product7 = Product.create(
       seller_id: 3,
 
 )
-file7 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/huawei_p30_pro.jpg')
+file7 = URI.open('https://amazone-seeds.s3.amazonaws.com/huawei_p30_pro.jpg')
 product7.photo.attach(io: file7, filename: 'huawei_p30_pro.jpg')
 
 
@@ -149,7 +149,7 @@ product8 = Product.create!(
       seller_id: 3,
 
 )
-file8 = open('https://app-amazone-dev.s3-us-east-1.amazonaws.com/mate_30.jpg')
+file8 = URI.open('https://amazone-seeds.s3.amazonaws.com/mate_30.jpg')
 product8.photo.attach(io: file8, filename: 'mate_30.jpg')
 # rm = RestClient.get "https://amazon24.p.rapidapi.com/api/product?keyword=smart%20phones&country=US&page=1&rapidapi-key=09dd4e2194msh9755f661cf6a433p1f0588jsnb19ace1119cd"
 # rm_array = JSON.parse(rm)["docs"]
