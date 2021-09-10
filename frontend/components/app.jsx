@@ -4,15 +4,20 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import WelcomeContainer from "./welcome/welcome_container";
 import SignUpFormContainer from './session/signup_form_container';
 import LogInFormContainer from './session/login_form_container';
+import ProductIndexContainer from './products/product_index_container'
+import ProductShowContainer from './products/product_show_container'
+import { AuthRoute, ProtectedRoute} from "../util/route_util";
 
 const App = () => (
   <div>
-      <header>  
-            <h1>amaZone</h1>
-            <WelcomeContainer />
-      </header>
-      <Route path="/login" component={LogInFormContainer} />
-      <Route path="/signup" component={SignUpFormContainer} />      
+        {/* <header><WelcomeContainer/></header> */}
+        <Switch>
+          <AuthRoute exact path="/login" component={LogInFormContainer} />
+          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+          <ProtectedRoute exact path="/products/:productId" component={ProductShowContainer}/>
+          <Route exact path="/" component={ProductIndexContainer} />
+        </Switch>
+            
   </div>
 );
 

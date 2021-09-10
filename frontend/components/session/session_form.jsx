@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../../../amaZoneLogo.png'
+// import logo from '../../../amaZoneLogo.png'
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,9 @@ class SessionForm extends React.Component {
       password: '',
     };
 //     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentWillUnmount() {
+    this.props.clearErrors()
   }
 
   update(field) {
@@ -47,6 +51,7 @@ class SessionForm extends React.Component {
       render() {
             let username;
             let demoUser;
+            let singUpButton
            if (this.props.formType === 'Sign-Up') {
                  username = <div>
                   <label className="label" htmlFor="username">Username
@@ -62,12 +67,13 @@ class SessionForm extends React.Component {
                   </div>
                          
            } else {
-                 demoUser = <button className="submit-button" onClick={(e) => this.handleDemoUser(e)}>Demo User</button>
+             demoUser = <button className="submit-button" onClick={(e) => this.handleDemoUser(e)}>Demo User</button>
+             singUpButton = <button className="submit-button"><Link className="signup-link" to="/signup">Sign Up</Link></button>
             }
 
       return (
       <div className="outer-container">
-            <img className="logo" src={logo}></img>
+            <img className="logo" src={window.amaZoneLogoURL}></img>
             <div className="container">
             <form className="session-form">
                   <h1 className="form-title">{this.props.formType}</h1>
@@ -95,9 +101,10 @@ class SessionForm extends React.Component {
                   </div>
                   <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
                   {demoUser}
-                  <p className="user-conditions">By continuing, you agree to Amazon's <span>Conditions of Use</span> and <span>Privacy Notice</span>.</p>
+                  {singUpButton}
+                  <p className="user-conditions">By continuing, you agree to Amazon's <span className="span">Conditions of Use</span> and <span className="span">Privacy Notice</span>.</p>
               </form>
-            </div>
+          </div>
       </div>
     );
   }

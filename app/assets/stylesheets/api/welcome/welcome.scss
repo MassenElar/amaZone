@@ -1,0 +1,152 @@
+* {
+      font-family: 'Lato', sans-serif;
+}
+
+.navbar{
+      background-color: #131921;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+}
+
+.logo {
+      width: 120px;
+      height: 50px;
+      margin-top: 5px;
+      margin-left: 20px;
+      margin-right: 20px;
+      border: 1px solid transparent;
+      
+}
+
+.search {
+      display: flex;
+      flex: 1;
+}
+
+.search-input {
+      height: 13px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+
+}
+
+.fa-search{
+      padding: 8px;
+      height: 17px !important;
+      border-radius: 5px;
+      background-color: rgba(240,193,75,1);
+}
+
+.navright{
+      display: flex;
+      justify-content: space-evenly;
+}
+
+.signin-menu {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      margin-right: 10px;
+}
+.menu1{
+      font-size: 13px;
+      color: rgb(211, 208, 208);
+}
+
+.menu2 {
+      font-size: 15px;
+      font-weight: 900;
+      color: white;
+}
+
+.signin-link{
+      text-decoration: none;
+      padding-top: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-bottom: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+}
+
+.signin-link > span {
+      position: absolute;
+}
+
+.shopping-cart {
+      display: flex;
+}
+
+
+.fa-shopping-cart {
+      font-size: 28px;
+      color: white;
+      margin-left: 10px;
+      margin-right: 20px;
+      
+}
+
+.fa-map-marker {
+      margin-right: 5px;
+}
+
+.signin-link:hover {
+      border: 1px solid white;
+      display: block;
+}
+.logo:hover {
+      border: 1px solid white;
+}
+
+
+
+.show {
+      display: flex;
+      flex-direction: column;
+      gap: 2;
+      position: absolute;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      min-width: 160px;
+      background-color: #f9f9f9;
+      top: 50px;
+      width: 300px ;
+      height: 150px;
+      right: 70px;
+      border: 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+}
+
+.clear {
+      display: none;
+}
+
+.drp-signin-btn{
+      width: 16rem;
+      height: 2rem;
+      border: solid 1px lightgrey;
+      border-radius: 4px;
+      background: linear-gradient(0deg, rgba(168,135,52,1) 0%, rgba(240,193,75,1) 5%);  
+      font-family: 'Lato', sans-serif;
+      padding: 2px;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+}
+
+
+.drp-signup-span {
+      text-decoration: none;
+      color: #146eb4;
+      font-size: small;
+}
+
+
+
+
