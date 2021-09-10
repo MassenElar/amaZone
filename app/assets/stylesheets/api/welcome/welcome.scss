@@ -69,7 +69,7 @@
       margin-right: 5px;
       padding-bottom: 10px;
       border: 1px solid transparent;
-      
+      cursor: pointer;
 }
 
 .signin-link > span {
@@ -101,15 +101,50 @@
       border: 1px solid white;
 }
 
-.dorp-down-list{
-      display: none;
-      position: absolute;
+
+
+.show {
       display: flex;
       flex-direction: column;
+      gap: 2;
+      position: absolute;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       min-width: 160px;
       background-color: #f9f9f9;
+      top: 50px;
+      width: 300px ;
+      height: 150px;
+      right: 70px;
+      border: 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+}
+
+.clear {
+      display: none;
+}
+
+.drp-signin-btn{
+      width: 16rem;
+      height: 2rem;
+      border: solid 1px lightgrey;
+      border-radius: 4px;
+      background: linear-gradient(0deg, rgba(168,135,52,1) 0%, rgba(240,193,75,1) 5%);  
+      font-family: 'Lato', sans-serif;
+      padding: 2px;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+}
+
+
+.drp-signup-span {
+      text-decoration: none;
+      color: #146eb4;
+      font-size: small;
 }
 
 
