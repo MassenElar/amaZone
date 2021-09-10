@@ -12,7 +12,7 @@ class ProductIndexItem extends React.Component {
             return (
                   <li className="product_item">
                         <Link className="product_link" to={`/Products/${this.props.product.id}`}>
-                              <img src={window.mate_30URL}></img>
+                              <img src={this.props.product.photoUrl}></img>
                               <div className="item-details">
                                     <h1>{this.props.product.productName.split(" ").slice(0, 5).join(" ")}</h1>
                               
@@ -20,7 +20,7 @@ class ProductIndexItem extends React.Component {
                                     
                                     <div className="details-price">
                                           <p>$</p>
-                                          <strong>{this.props.product.productPrice}</strong>
+                                          <strong>{(this.props.product.productPrice * 1).toFixed(2)}</strong>
                                     </div>
                                     <div className="rating">
                                           <p>⭐️ ⭐️ ⭐️ ⭐️ </p>

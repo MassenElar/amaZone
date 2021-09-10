@@ -3,7 +3,7 @@ import ProductIndexItem from "./product_index_item";
 import { Route } from "react-router-dom";
 import  homeImage  from '../../../app/assets/images/nav.jpg'
 import WelcomeContainer from "../welcome/welcome_container";
-import Footer from "../welcome/footer";
+import FooterContainer from "../welcome/footer_container";
 
 
 
@@ -18,6 +18,7 @@ class ProductIndex extends React.Component {
 
       render() {
             return (
+                  
                   <div>
                         <header><WelcomeContainer/></header>
                         <div className="main-page">
@@ -36,7 +37,7 @@ class ProductIndex extends React.Component {
                                     </ul> */}
                               </div>
                         </div>
-                        <Footer/>
+                        <FooterContainer/>
                   </div>
             )
       }

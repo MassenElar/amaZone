@@ -12,7 +12,7 @@ class Api::ProductsController < ApplicationController
             if @product 
                   render :show
             else
-                  render json: @Product.errors.full_message, status: 404
+                  render json: @product.errors.full_message, status: 404
             end
       end
 

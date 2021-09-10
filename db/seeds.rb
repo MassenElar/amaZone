@@ -16,90 +16,158 @@ demoUser = User.create(
       password: 'password'
 )
 
-#
-# product1 = Product.create(
-#       product_name: 'Samsung A71',
-#       product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
-#             Memory: 128GB 6GB RAM - Up to 512GB microSDXC
-#             Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
-#             OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
-#                   International Variant/US Compatible LTE',
-#       product_inventory: 40,
-#       product_price: 479.49,
-#       category_id: 1,
-#       seller_id: 2,
 
-# )
-# # file1 = open('https://amazone-seeds.s3.amazonaws.com/a71.jpg')
-# # product1.photo.attach(io: file1, filename: 'a71.jpg')
+product1 = Product.create(
+      product_name: 'Samsung A71',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 40,
+      product_price: 479.49,
+      product_category: "Smart Phone",
+      seller_id: 2,
 
-
-# product2 = Product.create(
-#       product_name: 'Samsung S20 Ultra',
-#       product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
-#             Memory: 128GB 6GB RAM - Up to 512GB microSDXC
-#             Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
-#             OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
-#                   International Variant/US Compatible LTE',
-#       product_inventory: 40,
-#       product_price: 800.49,
-#       category_id: 1,
-#       seller_id: 3,
-
-# )
-# # file2 = open('https://amazone-seeds.s3.amazonaws.com/s20_ultra.jpg')
-# # product2.photo.attach(io: file2, filename: 's20_ultra.jpg')
-
-# product3 = Product.create(
-#       product_name: 'Huawei P30 Pro',
-#       product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
-#             Memory: 128GB 6GB RAM - Up to 512GB microSDXC
-#             Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
-#             OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
-#                   International Variant/US Compatible LTE',
-#       product_inventory: 23,
-#       product_price: 760.49,
-#       category_id: 1,
-#       seller_id: 3,
-
-# )
-# # file3 = open('https://amazone-seeds.s3.amazonaws.com/huawei_p30_pro.jpg')
-# # product3.photo.attach(io: file3, filename: 'huawei_p30_pro.jpg')
+)
+file1 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/a71.jpg')
+product1.photo.attach(io: file1, filename: 'a71.jpg')
 
 
-# product4 = Product.create!(
-#       product_name: 'Huawei Mate 30',
-#       product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
-#             Memory: 128GB 6GB RAM - Up to 512GB microSDXC
-#             Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
-#             OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
-#                   International Variant/US Compatible LTE',
-#       product_inventory: 23,
-#       product_price: 900.49,
-#       category_id: 1,
-#       seller_id: 3,
+product2 = Product.create(
+      product_name: 'Samsung S20 Ultra',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 40,
+      product_price: 800.49,
+      product_category: "Smart Phone",
+      seller_id: 3,
 
-# )
-# # file4 = open('https://amazone-seeds.s3.amazonaws.com/mate_30.jpg')
-# # product4.photo.attach(io: file4, filename: 'mate_30.jpg')
+)
+file2 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/s20_ultra.jpg')
+product2.photo.attach(io: file2, filename: 's20_ultra.jpg')
 
-rm = RestClient.get "https://amazon24.p.rapidapi.com/api/product?keyword=smart%20phones&country=US&page=1&rapidapi-key=09dd4e2194msh9755f661cf6a433p1f0588jsnb19ace1119cd"
-rm_array = JSON.parse(rm)["docs"]
-User.destroy_all
-Product.destroy_all
+product3 = Product.create(
+      product_name: 'Huawei P30 Pro',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 23,
+      product_price: 760.49,
+      product_category: "Smart Phone",
+      seller_id: 3,
 
-rm_array.each do |product| 
-  Product.create!(
-    product_name: product["product_title"],
-    product_description: "Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels Memory: 128GB 6GB RAM - Up to 512GB microSDXC Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
-      OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
-      International Variant/US Compatible LTE',",
-    product_inventory: 20,
-    product_price: product["app_sale_price"].to_f,
-    seller_id: 1,
-    product_category: "Smart Phones",
-  )
-end
+)
+file3 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/huawei_p30_pro.jpg')
+product3.photo.attach(io: file3, filename: 'huawei_p30_pro.jpg')
+
+
+product4 = Product.create!(
+      product_name: 'Huawei Mate 30',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 23,
+      product_price: 900.49,
+      product_category: "Smart Phone",
+      seller_id: 3,
+
+)
+file4 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/mate_30.jpg')
+product4.photo.attach(io: file4, filename: 'mate_30.jpg')
+
+
+
+
+product5 = Product.create(
+      product_name: 'Samsung A71',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 40,
+      product_price: 479.49,
+      product_category: "Smart Phone",
+      seller_id: 2,
+
+)
+file5 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/a71.jpg')
+product5.photo.attach(io: file5, filename: 'a71.jpg')
+
+
+product6 = Product.create(
+      product_name: 'Samsung S20 Ultra',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 40,
+      product_price: 800.49,
+      product_category: "Smart Phone",
+      seller_id: 3,
+
+)
+file6 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/s20_ultra.jpg')
+product6.photo.attach(io: file6, filename: 's20_ultra.jpg')
+
+product7 = Product.create(
+      product_name: 'Huawei P30 Pro',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 23,
+      product_price: 760.49,
+      product_category: "Smart Phone",
+      seller_id: 3,
+
+)
+file7 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/huawei_p30_pro.jpg')
+product7.photo.attach(io: file7, filename: 'huawei_p30_pro.jpg')
+
+
+product8 = Product.create!(
+      product_name: 'Huawei Mate 30',
+      product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
+            Memory: 128GB 6GB RAM - Up to 512GB microSDXC
+            Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+            OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+                  International Variant/US Compatible LTE',
+      product_inventory: 23,
+      product_price: 900.49,
+      product_category: "Smart Phone",
+      seller_id: 3,
+
+)
+file8 = open('/Users/ousselar/Desktop/AppAcademy/FullStackAssets/mate_30.jpg')
+product8.photo.attach(io: file8, filename: 'mate_30.jpg')
+# rm = RestClient.get "https://amazon24.p.rapidapi.com/api/product?keyword=smart%20phones&country=US&page=1&rapidapi-key=09dd4e2194msh9755f661cf6a433p1f0588jsnb19ace1119cd"
+# rm_array = JSON.parse(rm)["docs"]
+# User.destroy_all
+# Product.destroy_all
+
+# rm_array.each do |product| 
+#   Product.create!(
+#     product_name: product["product_title"],
+#     product_description: "Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels Memory: 128GB 6GB RAM - Up to 512GB microSDXC Main Camera: Quad 64 MP PDAF + 12 MP + 5 MP dedicated macro camera + 5 MP depth sensor - Selfie Camera: 32 MP w/ HDR
+#       OS: Android - Chipset: Qualcomm SDM730 Snapdragon 730 - Graphics: Adreno 618 - Processor: Octa-core 2x2.2 GHz Kryo 470 Gold & 6x1.8 GHz Kryo 470 Silver
+#       International Variant/US Compatible LTE',",
+#     product_inventory: 20,
+#     product_price: product["app_sale_price"].to_f,
+#     seller_id: 1,
+#     product_category: "Smart Phones",
+#   )
+# end
 
 # tv = RestClient.get "https://amazon24.p.rapidapi.com/api/product?keyword=smart%20TV&country=US&page=1&rapidapi-key=09dd4e2194msh9755f661cf6a433p1f0588jsnb19ace1119cd"
 # tv_array = JSON.parse(tv)["docs"]
