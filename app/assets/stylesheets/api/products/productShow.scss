@@ -19,12 +19,12 @@
 .grid-show-2 {
       max-width: 80%;
       margin: 40px;
-      border: 1px solid gray;
+      border: 1px solid lightgrey;
       border-radius: 8px;
       padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 20px;
 }
 
 .product-show-name {
@@ -63,4 +63,51 @@
       word-spacing: 5px;
       line-height: 1.5;
       text-indent: 10px;
+}
+.free-return {
+      color: #007185;
+}
+
+.product-show-invetory{
+      color: #007600;
+      font-weight: bold;
+}
+
+.deliver-to {
+      color: #007185;
+      font-size: small;
+}
+
+.fast-delivery {
+      font-weight: bold;
+}
+
+.regular-font {
+      font-size: 15px;
+      font-weight: normal;
+}
+
+.buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+}
+
+.show-button-1 {
+      width: 10rem;
+      height: 1.8rem;
+      border: solid 1px lightgrey;
+      border-radius: 15px;
+      background: linear-gradient(0deg, rgb(240, 211, 140) 0%, rgba(240,193,75,1) 5%);  
+      font-family: 'Lato', sans-serif;
+}
+
+.show-button-2 {
+      width: 10rem;
+      height: 1.8rem;
+      border: solid 1px lightgrey;
+      border-radius: 15px;
+      background: linear-gradient(0deg, #FF9900 0%, #FF9900 5%);  
+      font-family: 'Lato', sans-serif;
+
 }

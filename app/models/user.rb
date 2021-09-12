@@ -8,6 +8,10 @@ validates :password, length: { minimum: 6 }, allow_nil: true
       attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :cart_items,
+      foreign_key: :user_id,
+      class: :CartItem
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

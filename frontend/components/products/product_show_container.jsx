@@ -5,7 +5,7 @@ import ProductShow from './product_show'
 
 const mSTP = (state, ownProps) => ({
       product: state.entities.products[ownProps.match.params.productId],
-      // loggedIn: Boolean(state.session.id)
+      currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = (dispatch) => ({

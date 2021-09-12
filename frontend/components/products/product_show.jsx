@@ -29,13 +29,18 @@ class ProductShow extends React.Component {
                               <div className="grid-show-2">
                                     <p className="product-show-price"><span>${product.productPrice}</span></p>
                                     <p className="free-return">& FREE Return</p>
-                                    <p><span>FREE delivery: </span></p>
-                                    <p className="product-show-invetory">{product.productInventory} Items left</p>
-                                    <button className="show-button">Add to Cart</button>
-                                    <button className="show-button">Buy Now</button>
+                                    <p><span className="free-return">FREE delivery</span></p>
+                                    <p>Fast delivery: <span className="fast-delivery">Tomorrow</span></p>
+                                    <p className="deliver-to"><i className="fa fa-map-marker"></i>Deliver to { this.props.currentUser.username}</p>
+                                    <p className="product-show-invetory">{product.productInventory} Items left.</p>
+                                    <div className="buttons">
+                                          <button className="show-button-1">Add to Cart</button>
+                                          <button className="show-button-2">Buy Now</button>
+                                    </div>
+                                    <p className="regular-font">Ships from and sold by amaZone.com</p>
                               </div>
-                              </div>
-                              <FooterContianer/>
+                        </div>
+                        <FooterContianer/>
                   </div>
             )
 
