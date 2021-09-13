@@ -102,7 +102,13 @@
       align-items: center;
 }
 
-.logo{
+.logo-session{
       width: 175px;
       height: 75px;
+      margin: 30px;
+}
+
+.error-red {
+      box-shadow: 0 0 5px rgb(226, 49, 90);
+      border: 1px solid rgb(232, 59, 59);
 }
