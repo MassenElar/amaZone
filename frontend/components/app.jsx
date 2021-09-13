@@ -6,7 +6,8 @@ import SignUpFormContainer from './session/signup_form_container';
 import LogInFormContainer from './session/login_form_container';
 import ProductIndexContainer from './products/product_index_container'
 import ProductShowContainer from './products/product_show_container'
-import { AuthRoute, ProtectedRoute} from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import CartItemContainer from './cart_items/cart_items_container'
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
           <ProtectedRoute exact path="/products/:productId" component={ProductShowContainer}/>
+          <ProtectedRoute exact path="/cart" component={CartItemContainer}/>
           <Route exact path="/" component={ProductIndexContainer} />
         </Switch>
             

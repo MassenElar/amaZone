@@ -83,7 +83,7 @@ class Welcome extends React.Component {
                                                 
                                           </div>
                                     </div>
-                                    <Link to="/" className="signin-link">
+                                    <Link to="/cart" className="signin-link">
                                           <div className="shopping-cart">
                                                 <i className="fa fa-shopping-cart"></i>
                                           </div>
