@@ -2,18 +2,21 @@ import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
 import Welcome from './welcome';
+import { fetchProducts } from '../../actions/product_actions';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mSTP = ({ session, entities: { users, products } }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    products: products
   };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mDTP = dispatch => ({
+  fetchProducts: () => dispatch(fetchProducts()),
   logout: () => dispatch(logout())
 });
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mSTP,
+  mDTP
 )(Welcome);

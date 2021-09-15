@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import WelcomeContainer from '../welcome/welcome_container';
 import Phone from '../../../app/assets/images/mate_30.jpg'
 import FooterContianer from '../welcome/footer_container';
+import ReviewsIndexContainer from '../reviews/reviews_index_container';
 
 
 class ProductShow extends React.Component {
@@ -16,6 +17,7 @@ class ProductShow extends React.Component {
       }
       componentDidMount() {
             this.props.fetchProduct(this.props.match.params.productId)
+            this.props.fetchReviews(this.props.match.params.productId)
       }
 
       qtyChange(e) {
@@ -76,6 +78,8 @@ class ProductShow extends React.Component {
                                     <p className="regular-font">Ships from and sold by amaZone.com</p>
                               </div>
                         </div>
+                        <ReviewsIndexContainer product={this.props.product}/>
+                        <Link to={`/products/${product.id}/reviews/create`}><button>Add a Review</button></Link>  
                         <FooterContianer/>
                   </div>
             )

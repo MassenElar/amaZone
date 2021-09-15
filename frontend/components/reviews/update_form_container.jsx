@@ -1,15 +1,50 @@
+import React from 'react';
 import { connect } from 'react-redux';
-import { updateReview } from '../../actions/review.actions';
+import { updateReview, fetchReview } from '../../actions/review.actions';
 import ReviewForm from './reviews_form';
+import ReviewEditForm from './review_update_form'
+import { withRouter } from 'react-router';
 
 
-const mapStateToProps = (state) => ({
-      currentUser = state.session.id,
+class EditReviewForm extends React.Component {
+  componentDidMount() {
+        this.props.fetchReview(this.props.match.params.reviewId, productId)
+  }
+  render () {
+    
+    const { review, formType, processForm, productId } = this.props;
+      
+        if (!review) return null;
+        
+    return (
+      <ReviewForm
+        review={review}
+        formType={formType}
+        processForm={processForm}
+        productId={productId} />
+    );
+  }
+}
+
+
+
+
+const mSTP = (state, ownProps) => {
+      
+     return {
+      review: state.entities.reviews[ownProps.match.params.reviewId],
+      productId: ownProps.match.params.productId, 
+      currentUser: state.session.id,
       formType: 'Update Review'
-});
+      }
+};
 
-const mapDispatchToProps = dispatch => ({
-      updateReview: (review, productId) => dispatch(updateReview(review, productId))
-});
+const mDTP = dispatch => {
+      
+      return {
+            fetchReview: (reviewId, productId) => dispatch(fetchReview(reviewId, productId)),
+            processForm: (review, productId) => dispatch(updateReview(review, productId))
+      }
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
+export default withRouter(connect(mSTP, mDTP)(ReviewForm));

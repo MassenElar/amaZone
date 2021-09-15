@@ -33,12 +33,20 @@
 
 }
 
-.fa-search{
-      padding: 8px;
-      height: 17px !important;
+.search_button{
+      display: absolute;
+      padding-bottom: 20px;
+      height: 20px !important;
       border-radius: 5px;
       background-color: rgba(240,193,75,1);
+      
 }
+
+.fa-search {
+      text-align: center;
+}
+
+
 
 .navright{
       display: flex;

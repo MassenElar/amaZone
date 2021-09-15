@@ -15,23 +15,23 @@ export const receiveReview = review => ({
 });
 
 export const removeReview = review => ({
-    type: RECEIVE_REVIEW,
+    type: REMOVE_REVIEW,
     review
 });
 
 export const fetchReviews = (productId) => dispatch => (
-      reviewsAPIUtil.fetchReviews(productId).then(reviews => dispatch(receiveProdReviews(reviews)))
+      reviewsAPIUtil.fetchReviews(productId).then((reviews) => dispatch(receiveProdReviews(reviews)))
 )
 
-export const fetchReview = (reviewId) => dispatch => (
-      reviewsAPIUtil.fetchReview(reviewId).then(review=> dispatch(receiveReview(review)))
+export const fetchReview = (reviewId, productId) => dispatch => (
+      reviewsAPIUtil.fetchReview(reviewId, productId).then(review => dispatch(receiveReview(review)))
 )
 
 export const createReview = (review, productId) => dispatch => (
       reviewsAPIUtil.createReview(review, productId).then(review => dispatch(receiveReview(review)))
 )
 
-export const deleteCartItem = (review, productId) => dispatch => (
+export const deleteReview = (review, productId) => dispatch => (
       reviewsAPIUtil.destroyReview(review, productId).then(review => dispatch(removeReview(review)))
 )
 

@@ -8,6 +8,8 @@ import ProductIndexContainer from './products/product_index_container'
 import ProductShowContainer from './products/product_show_container'
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import CartItemContainer from './cart_items/cart_items_container'
+import ReviewFormContainer from './reviews/reviews_form_container'
+import UpdateFormContainer from './reviews/update_form_container'
 
 const App = () => (
   <div>
@@ -16,7 +18,9 @@ const App = () => (
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
           <ProtectedRoute exact path="/products/:productId" component={ProductShowContainer}/>
-          <ProtectedRoute exact path="/cart" component={CartItemContainer}/>
+          <ProtectedRoute exact path="/products/:productId/reviews/:reviewId/update" component={UpdateFormContainer}/>
+          <ProtectedRoute exact path="/products/:productId/reviews/create" component={ReviewFormContainer} />
+          <ProtectedRoute exact path="/cart" component={CartItemContainer} />
           <Route exact path="/" component={ProductIndexContainer} />
         </Switch>
             

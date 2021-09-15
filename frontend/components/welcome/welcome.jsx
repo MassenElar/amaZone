@@ -8,14 +8,26 @@ class Welcome extends React.Component {
             super(props)
             this.state = {
                   show: false,
+                  word: ''
             }
             this.whenHover = this.whenHover.bind(this);
+            // this.HandleSearch = this.HandleSearch.bind(this)
       }
 
       whenHover(e) {
             const newState = !this.state.show 
             this.setState({show: newState})
-    }
+      }
+
+      inputChange(field) {
+            return e => this.setState({ [field]: e.currentTarget.value });
+      } 
+      
+      // HandleSearch(e) {
+      //       e.preventDefault();
+      //       this.props.fetchProducts(this.state.word)
+      //       this.setState({ word: '' });
+      // }
       
       render(){
             const { currentUser, logout } = this.props
@@ -60,10 +72,13 @@ class Welcome extends React.Component {
                                                 <span className="menu2"><i className="fa fa-map-marker"></i>Select your address</span>
                                           </div>
                               </Link>
-                              <div className="search">
-                                    <input type="text" className="search-input"></input>
-                                    <i className="fa fa-search" aria-hidden="true"></i>
-                              </div>
+                              
+                              <form className="search" >
+                                          <input type="text" className="search-input" >
+                                          </input>
+                                          <button className="search_button" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+                              </form>
+                              
                               <div className="navright">
                                     <div className="signin-link">
                                           <div className="signin-menu" onMouseOver={this.whenHover} >

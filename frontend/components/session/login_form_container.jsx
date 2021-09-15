@@ -5,18 +5,18 @@ import { login, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
-const mapStateToProps = ({ errors }) => {
+const mSTP = ({ errors }) => {
   return {
     errors: errors.session,
     formType: 'Sign-In',
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mDTP = dispatch => {
   return {
     processForm: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors())
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mSTP, mDTP)(SessionForm);
