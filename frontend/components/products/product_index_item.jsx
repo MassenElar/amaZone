@@ -22,11 +22,8 @@ class ProductIndexItem extends React.Component {
                                           <p>$</p>
                                           <strong>{(this.props.product.productPrice * 1).toFixed(2)}</strong>
                                     </div>
-                                    <div className="rating">
-                                          <p>⭐️ ⭐️ ⭐️ ⭐️ </p>
-                                    </div>
+                                   
                               </div>
-                              <button>Add To Cart</button>
                         </Link>
                   </li>
             )

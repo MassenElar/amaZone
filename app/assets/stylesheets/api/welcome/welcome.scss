@@ -28,16 +28,22 @@
       height: 13px;
       padding: 10px;
       border: none;
-      border-radius: 5px;
+      border-top-right-radius: none;
+      border-bottom-right-radius: none;
       width: 100%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
 
 }
 
 .fa-search{
       padding: 8px;
       height: 17px !important;
-      border-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
       background-color: rgba(240,193,75,1);
+      border-top-left-radius: none;
+      border-bottom-left-radius: none;
 }
 
 .navright{
@@ -106,21 +112,22 @@
 .show {
       display: flex;
       flex-direction: column;
-      gap: 2;
+      gap: 4;
       position: absolute;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       min-width: 160px;
       background-color: #f9f9f9;
-      top: 50px;
-      width: 300px ;
-      height: 150px;
-      right: 70px;
+      top: 55px;
+      width: 200px ;
+      height: 100px;
+      right: 120px;
       border: 1px solid;
       border-radius: 5px;
       cursor: pointer;
       justify-content: center;
       align-items: center;
+      text-align: center;
 }
 
 .clear {
@@ -128,7 +135,7 @@
 }
 
 .drp-signin-btn{
-      width: 16rem;
+      width: 150px;
       height: 2rem;
       border: solid 1px lightgrey;
       border-radius: 4px;
@@ -146,6 +153,14 @@
       text-decoration: none;
       color: #146eb4;
       font-size: small;
+}
+
+.arrow-modal {
+  border: solid 10px transparent;
+  border-right-color: white;
+  position: absolute;
+  margin: -120px 0px 0 5px;
+  transform: rotate(90deg);
 }
 
 

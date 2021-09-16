@@ -102,7 +102,7 @@
             cursor: pointer;
             border-left: 1px solid lightgrey;
             border-right: 1px solid lightgrey;
-            color: #007185
+            color: #007185;
       }
 }
 
@@ -122,6 +122,7 @@
 
 .add-review-button{
       align-self: center;
+      box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 

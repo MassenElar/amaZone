@@ -12,7 +12,6 @@ class ReviewForm extends React.Component {
 
       handleSubmit(e) {
             e.preventDefault();
-            
             this.props.processForm(this.state, this.props.productId).then(() => this.props.history.push(`/products/${this.props.productId}`))
       }
 

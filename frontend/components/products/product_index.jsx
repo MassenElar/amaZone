@@ -23,18 +23,20 @@ class ProductIndex extends React.Component {
                         <header><WelcomeContainer/></header>
                         <div className="main-page">
                               <div className="main-container">
-                                    <img className="image" src={window.navURL}></img>
+                                    <img className="image" src={window.bannerURL}></img>
                         
-                                    <ul className="product-ul">
-                                          {this.props.products.map((product) => (
-                                                <ProductIndexItem key={product.id} product={product} />
-                                          ))}
-                                    </ul>
-                                    {/* <ul className="product-ul">
-                                          {this.props.products.map((product) => (
-                                                <ProductIndexItem key={product.id} product={product}/>
-                                          ))}
-                                    </ul> */}
+                                    <div className="product-group1">
+                                          <ul className="product-ul">
+                                                {this.props.products.map((product) => (
+                                                      <ProductIndexItem key={product.id} product={product} />
+                                                ))}
+                                          </ul>
+                                          <ul className="product-ul">
+                                                {this.props.products.map((product) => (
+                                                      <ProductIndexItem key={product.id} product={product} />
+                                                ))}
+                                          </ul>
+                                    </div>
                               </div>
                         </div>
                         <FooterContainer/>

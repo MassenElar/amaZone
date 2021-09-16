@@ -85,9 +85,12 @@ class Welcome extends React.Component {
                                                 <span className="menu1">Hello, {user}</span>
                                                 <span className="menu2">Account & Lists</span>
                                                 <div onMouseOver={e => e.stopPropagation()} onMouseLeave={this.whenHover} className={this.state.show ? "show" : "clear"}>
-                                                      {logOutButton}
-                                                      {signInButton}
-                                                      {signUpLink} 
+                                                      <div className="arrow-modal"></div>
+                                                      <div >
+                                                            {logOutButton}
+                                                            {signInButton}
+                                                            {signUpLink}
+                                                      </div>
                                                 </div>
                                           </div>
                                     </div>

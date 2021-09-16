@@ -16,12 +16,14 @@ class EditReviewForm extends React.Component {
       
         if (!review) return null;
       
-    return (
-      <ReviewForm
-        review={review}
-        formType={formType}
-        processForm={processForm}
-        productId={productId} />
+        return (
+          
+              <ReviewForm {...this.props}/>
+      // <ReviewForm
+      //   review={review}
+      //   formType={formType}
+      //   processForm={processForm}
+      //   productId={productId} />
     );
   }
 }
