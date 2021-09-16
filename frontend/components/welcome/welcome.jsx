@@ -8,14 +8,26 @@ class Welcome extends React.Component {
             super(props)
             this.state = {
                   show: false,
+                  word: ''
             }
             this.whenHover = this.whenHover.bind(this);
+            // this.HandleSearch = this.HandleSearch.bind(this)
       }
 
       whenHover(e) {
             const newState = !this.state.show 
             this.setState({show: newState})
-    }
+      }
+
+      inputChange(field) {
+            return e => this.setState({ [field]: e.currentTarget.value });
+      } 
+      
+      // HandleSearch(e) {
+      //       e.preventDefault();
+      //       this.props.fetchProducts(this.state.word)
+      //       this.setState({ word: '' });
+      // }
       
       render(){
             const { currentUser, logout } = this.props
@@ -60,19 +72,25 @@ class Welcome extends React.Component {
                                                 <span className="menu2"><i className="fa fa-map-marker"></i>Select your address</span>
                                           </div>
                               </Link>
-                              <div className="search">
-                                    <input type="text" className="search-input"></input>
-                                    <i className="fa fa-search" aria-hidden="true"></i>
-                              </div>
+                              
+                              <form className="search" >
+                                          <input type="text" className="search-input" >
+                                          </input>
+                                          <i className="fa fa-search" aria-hidden="true"></i>
+                              </form>
+                              
                               <div className="navright">
                                     <div className="signin-link">
                                           <div className="signin-menu" onMouseOver={this.whenHover} >
                                                 <span className="menu1">Hello, {user}</span>
                                                 <span className="menu2">Account & Lists</span>
                                                 <div onMouseOver={e => e.stopPropagation()} onMouseLeave={this.whenHover} className={this.state.show ? "show" : "clear"}>
-                                                      {logOutButton}
-                                                      {signInButton}
-                                                      {signUpLink} 
+                                                      <div className="arrow-modal"></div>
+                                                      <div >
+                                                            {logOutButton}
+                                                            {signInButton}
+                                                            {signUpLink}
+                                                      </div>
                                                 </div>
                                           </div>
                                     </div>
@@ -83,7 +101,7 @@ class Welcome extends React.Component {
                                                 
                                           </div>
                                     </div>
-                                    <Link to="/" className="signin-link">
+                                    <Link to="/cart" className="signin-link">
                                           <div className="shopping-cart">
                                                 <i className="fa fa-shopping-cart"></i>
                                           </div>

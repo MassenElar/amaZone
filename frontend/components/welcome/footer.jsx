@@ -36,34 +36,29 @@ class Footer extends React.Component {
                               </div>
                               <div className="footer-list">
                                     <ul>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
+                                          <li className="footer-list-title">Technologies </li>
+                                          <li className="footer-list-subtitles">Ruby on Rails</li>
+                                          <li className="footer-list-subtitles">React JS</li>
+                                          <li className="footer-list-subtitles">Postgres DB</li>
+                                          
                                     </ul>
                                     <ul>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
+                                          <li className="footer-list-title">Languages</li>
+                                          <li className="footer-list-subtitles">JavaScript</li>
+                                          <li className="footer-list-subtitles">Ruby</li>
+                                          
                                     </ul>
                                     <ul>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
-                                          <li>Get to Know Us</li>
+                                          <li className="footer-list-title">amaZone</li>
+                                          <li className="footer-list-subtitles">E-commerce website</li>
+                                          <li className="footer-list-subtitles">Inspired by Amazon</li>
+                                          
                                     </ul>
                               </div>
                               <div className="footer-links">
-                                    <img className="logo-footer" src={window.amaZoneLogo1URL}></img>
-                                    <i className="fa fa-github" ></i>
-                                    <i className="fa fa-linkedin-square"></i>
+                                    <Link to="/"><img className="logo-footer" src={window.amaZoneLogo1URL}></img></Link>
+                                    <a href="https://github.com/OussamaElar"><i className="fa fa-github" ></i></a>
+                                    <a href="https://www.linkedin.com/in/oussama-el-arabi-b67b1686/"><i className="fa fa-linkedin-square"></i></a>
                               </div>
                         </div>
                   </footer>

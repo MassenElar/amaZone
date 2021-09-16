@@ -1,0 +1,130 @@
+// Place all the styles related to the api/reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.reviews {
+      margin-top: 100px;
+}
+
+.reviews-form {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      gap: 30px;
+      margin: auto;
+      
+}
+
+#review-title {
+      font-size: x-large;
+      font-weight: bolder;
+      border-bottom: 1px solid lightgrey;
+      // border-top: 1px solid lightgrey;
+      padding-top: 10px;
+      padding-bottom: 10px;
+}
+
+.review-form-rating{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid lightgrey;
+}
+
+#review-submit-from {
+      width: 20%;
+      height: 2rem;
+      border: solid 1px #ffe700;
+      border-radius: 15px;
+      background: linear-gradient(0deg, #ffe700 0%, #ffe700 5%);  
+      font-family: 'Lato', sans-serif;
+      cursor: pointer;
+      align-self: flex-end;
+}
+
+#review-form-title{
+      width: 100%;
+}
+
+.reviews-show{
+      margin: 30px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      textarea{
+            font-size: large;
+            padding-bottom: 20px;
+            border: none;
+            resize: none;
+
+      }
+}
+
+.profil-review {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 10px;
+      align-content: center;
+}
+
+.avatar{
+      color: gray;
+}
+
+.profil-review > p {
+      font-size: larger;
+      font-weight: bold;
+      margin-top: 22px;
+}
+
+.rating-display{
+      display: flex;
+      gap: 20px;
+      padding-bottom: 10px;
+      align-content: center;
+      p{
+            font-size: larger;
+            font-weight: 900;
+            margin-top: 2px;
+      }
+}
+
+.review-button{
+      display: flex;
+      gap: 20px; 
+
+      button {
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            border-left: 1px solid lightgrey;
+            border-right: 1px solid lightgrey;
+            color: #007185;
+      }
+}
+
+.update-review{
+      border: none;
+      background-color: white;
+      cursor: pointer;
+      border-left: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+}
+
+.review-area{
+      margin: 20px;
+      background-color: white;
+      padding: 30px;
+}
+
+.add-review-button{
+      align-self: center;
+      box-shadow: 1px 1px 1px 1px lightgrey;
+}
+
+
+
+

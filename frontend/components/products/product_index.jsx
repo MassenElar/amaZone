@@ -23,18 +23,43 @@ class ProductIndex extends React.Component {
                         <header><WelcomeContainer/></header>
                         <div className="main-page">
                               <div className="main-container">
-                                    <img className="image" src={window.navURL}></img>
+                                    <img className="image" src={window.bannerURL}></img>
                         
-                                    <ul className="product-ul">
-                                          {this.props.products.map((product) => (
-                                                <ProductIndexItem key={product.id} product={product}/>
-                                          ))}
-                                    </ul>
-                                    {/* <ul className="product-ul">
-                                          {this.props.products.map((product) => (
-                                                <ProductIndexItem key={product.id} product={product}/>
-                                          ))}
-                                    </ul> */}
+                                    <div className="product-group1">
+                                          <ul className="product-ul1">
+                                                {this.props.products.map((product) => (
+                                                      (product.productCategory === 'Smart Phone') ?
+                                                      
+                                                            <ProductIndexItem key={product.id} product={product} /> : null 
+                                                ))}
+                                          </ul>
+                                          <ul className="product-ul2">
+                                                {this.props.products.map((product) => (
+                                                      (product.productCategory === 'Laptops') ?
+                                                      
+                                                            <ProductIndexItem key={product.id} product={product} /> : null 
+                                                      
+                                                ))}
+                                          </ul>
+                                    </div>
+                                    <div className="product-group2">
+                                          <ul className="product-ul3">
+                                                {this.props.products.map((product) => (
+                                                      (product.productCategory === 'Smart Tvs') ?
+                                                      
+                                                            <ProductIndexItem key={product.id} product={product} /> : null 
+                                                ))}
+                                          </ul>
+                                          <ul className="product-ul3">
+                                                {this.props.products.map((product) => (
+                                                      (product.productCategory === 'Smart Watches') ?
+                                                      
+                                                            <ProductIndexItem key={product.id} product={product} /> : null 
+                                                      
+                                                ))}
+                                          </ul>
+
+                                    </div>
                               </div>
                         </div>
                         <FooterContainer/>

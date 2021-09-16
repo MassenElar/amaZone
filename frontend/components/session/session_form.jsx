@@ -73,16 +73,15 @@ class SessionForm extends React.Component {
 
       return (
       <div className="outer-container">
-            <img className="logo" src={window.amaZoneLogoURL}></img>
+            <Link to="/"><img className="logo-session" src={window.amaZoneLogoURL}></img></Link>
             <div className="container">
             <form className="session-form">
                   <h1 className="form-title">{this.props.formType}</h1>
-                  <h2>{this.renderErrors()}</h2>
                   {username}
                   <div>
                         <label className="label" htmlFor="email">Email</label>
                           <input
-                            className="input"
+                            className={this.props.errors.length === 0 ? 'input' : 'input error-red'}
                             type="email"
                             id="email"
                             value={this.state.email}
@@ -92,17 +91,18 @@ class SessionForm extends React.Component {
                   <div>
                         <label className="label" htmlFor="password">Password</label>
                           <input
-                          className="input"
+                          className={this.props.errors.length === 0 ? 'input' : 'input error-red'}
                           type="password"
                             id="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                           />
                   </div>
+                  <h2>{this.renderErrors()}</h2>
                   <button className="submit-button" onClick={(e) => this.handleSubmit(e)}>{this.props.formType} </button>
                   {demoUser}
                   {singUpButton}
-                  <p className="user-conditions">By continuing, you agree to Amazon's <span className="span">Conditions of Use</span> and <span className="span">Privacy Notice</span>.</p>
+                  <p className="user-conditions">By continuing, you agree to amaZon's Conditions of Use and Privacy Notice</p>
               </form>
           </div>
       </div>
