@@ -30,11 +30,7 @@ product1 = Product.create(
       seller_id: 2,
 
 )
-<<<<<<< HEAD
-file1 = URI.open("https://amazone-seeds.s3.amazonaws.com/a71.jpg")
-=======
 file1 = URI.open('https://amazone-seeds.s3.amazonaws.com/a71.jpg')
->>>>>>> Reviews
 product1.photo.attach(io: file1, filename: 'a71.jpg')
 
 
