@@ -139,13 +139,8 @@ Great for students, travelers, and those who like to work from home or the local
       seller_id: 2,
 
 )
-<<<<<<< HEAD
-file5 = URI.open('https://amazone-seeds.s3.amazonaws.com/a71.jpg')
-product5.photo.attach(io: file5, filename: 'a71.jpg')
-=======
 file8 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop4.jpg')
 product8.photo.attach(io: file8, filename: 'laptop4.jpg')
->>>>>>> Reviews
 
 
 
@@ -158,13 +153,8 @@ product9 = Product.create!(
       seller_id: 4,
 
 )
-<<<<<<< HEAD
-file6 = URI.open('https://amazone-seeds.s3.amazonaws.com/s20_ultra.jpg')
-product6.photo.attach(io: file6, filename: 's20_ultra.jpg')
-=======
 file9 = URI.open('https://amazone-seeds.s3.amazonaws.com/tv1.jpg')
 product9.photo.attach(io: file9, filename: 'tv1.jpg')
->>>>>>> Reviews
 
 
 
@@ -177,13 +167,8 @@ product10 = Product.create!(
       seller_id: 4,
 
 )
-<<<<<<< HEAD
-file7 = URI.open('https://amazone-seeds.s3.amazonaws.com/huawei_p30_pro.jpg')
-product7.photo.attach(io: file7, filename: 'huawei_p30_pro.jpg')
-=======
 file10 = URI.open('https://amazone-seeds.s3.amazonaws.com/tv2.jpg')
 product10.photo.attach(io: file10, filename: 'tv2.jpg')
->>>>>>> Reviews
 
 
 
@@ -197,10 +182,6 @@ product11 = Product.create!(
       seller_id: 4,
 
 )
-<<<<<<< HEAD
-file8 = URI.open('https://amazone-seeds.s3.amazonaws.com/mate_30.jpg')
-product8.photo.attach(io: file8, filename: 'mate_30.jpg')
-=======
 file11 = URI.open('https://amazone-seeds.s3.amazonaws.com/tv3.jpg')
 product11.photo.attach(io: file11, filename: 'tv3.jpg')
 
@@ -274,7 +255,6 @@ product16 = Product.create!(
 file16 = URI.open('https://amazone-seeds.s3.amazonaws.com/watch4.jpg')
 product16.photo.attach(io: file16, filename: 'watch4.jpg')
 
->>>>>>> Reviews
 # rm = RestClient.get "https://amazon24.p.rapidapi.com/api/product?keyword=smart%20phones&country=US&page=1&rapidapi-key=09dd4e2194msh9755f661cf6a433p1f0588jsnb19ace1119cd"
 # rm_array = JSON.parse(rm)["docs"]
 # User.destroy_all
