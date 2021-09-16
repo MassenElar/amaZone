@@ -4,6 +4,7 @@ import WelcomeContainer from '../welcome/welcome_container';
 import Phone from '../../../app/assets/images/mate_30.jpg'
 import FooterContianer from '../welcome/footer_container';
 import ReviewsIndexContainer from '../reviews/reviews_index_container';
+import ReactStars from "react-rating-stars-component";
 
 
 
@@ -52,7 +53,9 @@ class ProductShow extends React.Component {
                               <img className="show-image" src={product.photoUrl}></img>
                               <div className="grid-show-1">
                                     <p className="product-show-name">{product.productName}</p>
-                                    <p className="show-rating">⭐️⭐️⭐️</p>
+                                    <div className=" show-rating">
+                                          <ReactStars count={5} value={4.5} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
+                                    </div>
                                     <p className="product-show-lprice">List Price: <span>${((product.productPrice * 1.2).toFixed(2)) }</span></p>
                                     <p className="product-show-price">Price: <span>${(product.productPrice * 1).toFixed(2)}</span></p>
                                     <p className="product-description">{product.productDescription}</p>

@@ -34,8 +34,8 @@
 
 .show-rating {
       border-bottom: 1px solid lightgrey;
-      padding-bottom: 5px;
-      font-size: small;
+      padding-bottom: 10px;
+      // font-size: small;
 }
 
 .product-show-price > span {
@@ -58,11 +58,12 @@
 }
 
 .product-description{
-      display: list-item;
       padding: 10px;
       word-spacing: 5px;
       line-height: 1.5;
       text-indent: 10px;
+      text-align: left;
+      
 }
 .free-return {
       color: #007185;
