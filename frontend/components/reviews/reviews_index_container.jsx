@@ -6,7 +6,7 @@ import { fetchReviews, deleteReview, fetchReview } from "../../actions/review.ac
 
 const mSTP = (state, ownProps) => ({
       reviews: Object.values(state.entities.reviews),
-      currentUser: state.session.id 
+      currentUser: state.session.id
 })
 
 const mDTP = dispatch => ({

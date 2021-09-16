@@ -4,6 +4,7 @@ import { fetchProduct } from '../../actions/product_actions'
 import ProductShow from './product_show'
 import { createCartItem } from '../../actions/cart_item_actions'
 import { fetchReviews } from '../../actions/review.actions';
+import { withRouter } from 'react-router';
 
 const mSTP = (state, ownProps) => ({
       product: state.entities.products[ownProps.match.params.productId],
@@ -16,4 +17,4 @@ const mDTP = (dispatch) => ({
       fetchReviews: (productId) => dispatch(fetchReviews(productId))
 });
 
-export default connect(mSTP, mDTP)(ProductShow);
+export default withRouter(connect(mSTP, mDTP)(ProductShow));

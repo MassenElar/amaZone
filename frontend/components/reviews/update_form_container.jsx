@@ -8,14 +8,14 @@ import { withRouter } from 'react-router';
 
 class EditReviewForm extends React.Component {
   componentDidMount() {
-        this.props.fetchReview(this.props.match.params.reviewId, productId)
+        this.props.fetchReview(this.props.match.params.reviewId, this.props.productId)
   }
   render () {
     
     const { review, formType, processForm, productId } = this.props;
       
         if (!review) return null;
-        
+      
     return (
       <ReviewForm
         review={review}
@@ -47,4 +47,4 @@ const mDTP = dispatch => {
       }
 };
 
-export default withRouter(connect(mSTP, mDTP)(ReviewForm));
+export default withRouter(connect(mSTP, mDTP)(EditReviewForm));

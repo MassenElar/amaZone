@@ -76,7 +76,7 @@ class Welcome extends React.Component {
                               <form className="search" >
                                           <input type="text" className="search-input" >
                                           </input>
-                                          <button className="search_button" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+                                          <i className="fa fa-search" aria-hidden="true"></i>
                               </form>
                               
                               <div className="navright">

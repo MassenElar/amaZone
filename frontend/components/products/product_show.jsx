@@ -6,6 +6,7 @@ import FooterContianer from '../welcome/footer_container';
 import ReviewsIndexContainer from '../reviews/reviews_index_container';
 
 
+
 class ProductShow extends React.Component {
       constructor(props) {
             super(props)
@@ -37,8 +38,13 @@ class ProductShow extends React.Component {
 
       render() {
             const { product } = this.props;
-            // let price = product.productPrice;
             if (product === undefined) return null 
+            // let price = product.productPrice;
+            // let overallRating = 0;
+            // this.props.reviews.forEach(review => {
+            //       overallRating += review.rating
+            // });
+            
                   return(
                   <div>
                         <header><WelcomeContainer/></header>
@@ -79,7 +85,7 @@ class ProductShow extends React.Component {
                               </div>
                         </div>
                         <ReviewsIndexContainer product={this.props.product}/>
-                        <Link to={`/products/${product.id}/reviews/create`}><button>Add a Review</button></Link>  
+                        {/* <Link to={`/products/${product.id}/reviews/create`}><button>Add a Review</button></Link>   */}
                         <FooterContianer/>
                   </div>
             )

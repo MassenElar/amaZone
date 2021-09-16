@@ -7,7 +7,7 @@ import CartItemsShow from "./cart_item_show";
 class CartItems extends React.Component {
       constructor(props) {
             super(props)
-            // debugger
+           
             this.state = {
                   checkoutSuccess: ''
             }

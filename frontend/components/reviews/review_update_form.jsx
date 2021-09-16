@@ -11,7 +11,6 @@ class ReviewEditForm extends React.Component {
 
       handleSubmit(e) {
             e.preventDefault();
-            debugger
             this.props.processForm(this.state, this.props.productId)
       }
 
