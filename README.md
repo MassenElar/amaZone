@@ -1,6 +1,4 @@
 # README
-
-# README
 ## amaZone
 anmaZone is an E-commerce webiste inspired and clone based on Amazon that allow customers to purchase a eloctronics such as Smart Phones, Smart Tvs and so on, costumers will be allowed to add reviews on any product.
 
