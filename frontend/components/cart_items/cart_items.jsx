@@ -22,7 +22,7 @@ class CartItems extends React.Component {
             this.props.cartItems.forEach(cartItem => {
                   this.props.deleteCartItem(cartItem)
             })
-            this.setState({checkoutSuccess: <p className="checkout-success">Your Oreder is Confirmed!</p>})
+            this.setState({checkoutSuccess: <p className="checkout-success">Your Order is Confirmed!</p>})
       }
 
 
