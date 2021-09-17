@@ -19,11 +19,7 @@ class EditReviewForm extends React.Component {
         return (
           
               <ReviewForm {...this.props}/>
-      // <ReviewForm
-      //   review={review}
-      //   formType={formType}
-      //   processForm={processForm}
-      //   productId={productId} />
+      
     );
   }
 }
