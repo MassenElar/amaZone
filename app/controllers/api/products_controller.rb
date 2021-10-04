@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
       before_action :ensure_logged_in!, only: [:show] 
 
       def index 
-            @products = Product.all
+            @products = word ? Product.search(word) : Product.all
             render :index
       end
 
@@ -16,8 +16,9 @@ class Api::ProductsController < ApplicationController
             end
       end
 
-      def product_params
-            params.require(:product).permit(:product_name, :product_description, :product_inventory, :product_price, :product_category, :seller_id)
+
+      def word 
+            params[:word]
       end
 
 

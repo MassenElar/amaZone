@@ -10,5 +10,7 @@ class Product < ApplicationRecord
             foreign_key: :product_id,
             class_name: :Review
       
-      
+      def self.search(word) 
+            self.where("product_name ILIKE ?", "%#{word}%").or(self.where("product_category ILIKE ?", "%#{word}%"))
+      end
 end

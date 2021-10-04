@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class ProductIndexItem extends React.Component {
+class SerachItem extends React.Component {
       constructor(props) {
             super(props);
       }
@@ -15,9 +15,6 @@ class ProductIndexItem extends React.Component {
                               <img src={this.props.product.photoUrl}></img>
                               <div className="item-details">
                                     <h1>{this.props.product.productName.split(" ").slice(0, 5).join(" ")}</h1>
-                              
-                              {/* <p>Inventory:   {this.props.product.productInventory}</p> */}
-                                    
                                     <div className="details-price">
                                           <p>$</p>
                                           <strong>{(this.props.product.productPrice * 1).toFixed(2)}</strong>
@@ -30,4 +27,4 @@ class ProductIndexItem extends React.Component {
       }
 };
 
-export default ProductIndexItem;
+export default SerachItem;

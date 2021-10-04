@@ -4,15 +4,15 @@ import { logout } from '../../actions/session_actions';
 import Welcome from './welcome';
 import { fetchProducts } from '../../actions/product_actions';
 
-const mSTP = ({ session, entities: { users, products } }) => {
+const mSTP = (state) => {
   return {
-    currentUser: users[session.id],
-    products: products
+    currentUser: state.entities.users[state.session.id],
+    products: state.entities.products
   };
 };
 
 const mDTP = dispatch => ({
-  fetchProducts: () => dispatch(fetchProducts()),
+  fetchProducts: (data) => dispatch(fetchProducts(data)),
   logout: () => dispatch(logout())
 });
 

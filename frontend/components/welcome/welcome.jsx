@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 // import logo from '../../../amaZoneLogo1.png'
 
 
@@ -11,7 +12,7 @@ class Welcome extends React.Component {
                   word: ''
             }
             this.whenHover = this.whenHover.bind(this);
-            // this.HandleSearch = this.HandleSearch.bind(this)
+            this.HandleSearch = this.HandleSearch.bind(this)
       }
 
       whenHover(e) {
@@ -23,11 +24,12 @@ class Welcome extends React.Component {
             return e => this.setState({ [field]: e.currentTarget.value });
       } 
       
-      // HandleSearch(e) {
-      //       e.preventDefault();
-      //       this.props.fetchProducts(this.state.word)
-      //       this.setState({ word: '' });
-      // }
+      HandleSearch(e) {
+            e.preventDefault();
+            this.props.fetchProducts(this.state.word)
+            this.props.history.push("/search")
+            this.setState({ word: '' });
+      }
       
       render(){
             const { currentUser, logout } = this.props
@@ -73,10 +75,10 @@ class Welcome extends React.Component {
                                           </div>
                               </Link>
                               
-                              <form className="search" >
-                                          <input type="text" className="search-input" >
+                              <form className="search" onSubmit={this.HandleSearch}>
+                                          <input type="text" className="search-input" value={this.state.word} onChange={this.inputChange('word')}>
                                           </input>
-                                          <i className="fa fa-search" aria-hidden="true"></i>
+                                          <button type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
                               </form>
                               
                               <div className="navright">
@@ -116,4 +118,4 @@ class Welcome extends React.Component {
 
 }
 
-export default Welcome;
+export default withRouter(Welcome);
