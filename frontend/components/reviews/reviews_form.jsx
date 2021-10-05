@@ -37,7 +37,7 @@ class ReviewForm extends React.Component {
                                           <label htmlFor="review-form-rating">Overall rating</label>
                                           <ReactStars
                                                 count={5}
-                                                value={1}
+                                                value={0}
                                                 onChange={this.update('rating')}
                                                 size={24}
                                                 activeColor="#ffd700"

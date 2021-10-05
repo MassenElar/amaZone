@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => ({
       review: {
             title: '',
             body: '',
-            rating: 5,
+            rating: 1,
             product_id: ownProps.match.params.productId,
             reviewer_id: state.session.id
       },

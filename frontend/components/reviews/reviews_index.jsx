@@ -16,7 +16,9 @@ class ReviewsIndex extends React.Component {
 
       render() {
             if (!this.props.reviews) return null
-            let addReview = <Link to={`/products/${this.props.product.id}/reviews/create`}><button id="review-submit-from" className="add-review-button">Write a customer review</button></Link> ;
+            let addReview = <div className="review-area">
+                  <Link to={`/products/${this.props.product.id}/reviews/create`}><button id="review-submit-from" className="add-review-button">Write a customer review</button></Link>
+            </div> ;
             
             this.props.reviews.forEach(review => {
                   if (review && review.reviewerId === this.props.currentUser) {
@@ -34,7 +36,7 @@ class ReviewsIndex extends React.Component {
                                           />
                                     ))}
                               </ul>
-                              <div className="review-area">{addReview}</div>
+                              {addReview}
                         </div>
                   </div>
             )

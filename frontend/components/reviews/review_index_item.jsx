@@ -31,7 +31,7 @@ class ReviewIndexItem extends React.Component {
                               <ReactStars count={5} value={this.props.review.rating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
                               <p>{this.props.review.title}</p>
                         </div>
-                        <textarea readOnly>{this.props.review.body}</textarea>
+                        <textarea readOnly value={this.props.review.body}></textarea>
                         <div className="review-button">
                               {updateReview}
                               {deleteReview}

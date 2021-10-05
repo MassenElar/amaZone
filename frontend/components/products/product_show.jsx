@@ -12,15 +12,24 @@ class ProductShow extends React.Component {
       constructor(props) {
             super(props)
             this.state = {
-                  quantity: 1
+                  quantity: 1,
+                  reviews: this.props.reviews
             }
             this.qtyChange = this.qtyChange.bind(this)
             this.handleSubmit = this.handleSubmit.bind(this)
       }
       componentDidMount() {
-            this.props.fetchProduct(this.props.match.params.productId)
-            this.props.fetchReviews(this.props.match.params.productId)
+          
+            this.props.fetchProduct(this.props.match.params.productId).then((res) => this.props.fetchReviews(this.props.match.params.productId).then((res) => this.forceUpdate()))
+            // this.props.fetchReviews(this.props.match.params.productId)
       }
+
+      componentDidUpdate(prevProps) {
+            if (prevProps.reviews.length !== this.props.reviews.length) {
+                  this.setState({reviews: this.props.reviews})
+            }
+      }
+      
 
       qtyChange(e) {
             e.preventDefault();
@@ -38,14 +47,22 @@ class ProductShow extends React.Component {
       }
 
       render() {
-            const { product } = this.props;
+            const { product, reviews } = this.props;
             if (product === undefined) return null 
             // let price = product.productPrice;
-            // let overallRating = 0;
-            // this.props.reviews.forEach(review => {
-            //       overallRating += review.rating
-            // });
-            
+            let ratingTotal = 0;
+            let overallRating = 1;
+            let productRating;
+            if (this.state.reviews.length !== 0) {
+
+                  this.state.reviews.forEach(review => {
+                        ratingTotal += review.rating
+                  });
+                  overallRating = Math.round(ratingTotal / this.state.reviews.length)
+                  productRating = <ReactStars count={5} value={overallRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
+            } 
+            console.log(overallRating);
+           
                   return(
                   <div>
                         <header><WelcomeContainer/></header>
@@ -54,7 +71,7 @@ class ProductShow extends React.Component {
                               <div className="grid-show-1">
                                     <p className="product-show-name">{product.productName}</p>
                                     <div className=" show-rating">
-                                          <ReactStars count={5} value={4.5} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
+                                          {productRating}
                                     </div>
                                     <p className="product-show-lprice">List Price: <span>${((product.productPrice * 1.2).toFixed(2)) }</span></p>
                                     <p className="product-show-price">Price: <span>${(product.productPrice * 1).toFixed(2)}</span></p>

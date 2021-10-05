@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import { Input } from '@material-ui/core';
 // import logo from '../../../amaZoneLogo1.png'
 
 
@@ -26,8 +27,8 @@ class Welcome extends React.Component {
       
       HandleSearch(e) {
             e.preventDefault();
-            this.props.fetchProducts(this.state.word)
-            this.props.history.push("/search")
+            this.props.fetchProducts(this.state.word).then(() => this.props.history.push("/search"))
+            
             this.setState({ word: '' });
       }
       
@@ -78,7 +79,7 @@ class Welcome extends React.Component {
                               <form className="search" onSubmit={this.HandleSearch}>
                                           <input type="text" className="search-input" value={this.state.word} onChange={this.inputChange('word')}>
                                           </input>
-                                          <button type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+                                          <button className="search-button"><i type="submit" className="fa fa-search" aria-hidden="true"></i></button>
                               </form>
                               
                               <div className="navright">

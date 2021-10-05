@@ -6,10 +6,13 @@ import { createCartItem } from '../../actions/cart_item_actions'
 import { fetchReviews } from '../../actions/review.actions';
 import { withRouter } from 'react-router';
 
-const mSTP = (state, ownProps) => ({
-      product: state.entities.products[ownProps.match.params.productId],
-      currentUser: state.entities.users[state.session.id]
-});
+const mSTP = (state, ownProps) => {
+      return {
+            reviews: Object.values(state.entities.reviews),
+            product: state.entities.products[ownProps.match.params.productId],
+            currentUser: state.entities.users[state.session.id]
+      };
+}
 
 const mDTP = (dispatch) => ({
       fetchProduct: productId => dispatch(fetchProduct(productId)),

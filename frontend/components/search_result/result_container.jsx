@@ -4,7 +4,7 @@ import SearchResult  from "./result";
 
 
 const mSTP = (state, ownProps) => {
-      debugger
+      
       return {
             
             products: Object.values(state.entities.products),

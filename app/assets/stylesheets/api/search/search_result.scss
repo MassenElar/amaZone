@@ -1,0 +1,32 @@
+.product-result{
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      // grid-column-gap: 5px;
+      // margin-left: 5px;
+      // margin-right: 5px;
+      z-index: 1;
+      justify-content: center;
+      justify-items: center;
+      // border: 1px solid yellow;
+      background-color: white;
+      border-radius: 5px;
+}
+
+.empty-search {
+      font-size: x-large;
+      font-weight: bolder;
+      padding: 30px;
+      padding-left: 10px;
+      // background-color: white;
+      z-index: 2;
+      
+}
+
+.warning-search{
+      display: flex;
+      align-items: center;
+}
+
+.fa-exclamation-circle{
+      font-size: 40px;
+}

@@ -13,10 +13,10 @@ class SearchResult extends React.Component {
             super(props)
       }
       
-      componentDidMount() {
-            debugger
-            this.props.fetchProducts()
-      }
+      // componentDidMount() {
+      //       
+      //       // this.props.fetchProducts()
+      // }
 
       render() {
             return (
@@ -27,11 +27,11 @@ class SearchResult extends React.Component {
                               <div className="main-container">
                                     <img className="image" src={window.bannerURL}></img>
                         
-                                    <div className="product-group1">
-                                          <ul className="product-ul1">
-                                                {this.props.products.map((product) => (
+                                    <div className="">
+                                          <ul className="product-result">
+                                                {this.props.products.length !== 0 ? this.props.products.map((product) => (
                                                       <SearchItem key={product.id} product={product} /> 
-                                                ))}
+                                                )) :<div className="warning-search"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i><p className="empty-search"> No Items Found...</p></div>}
                                           </ul>
                                     </div>
                               </div>
