@@ -5,6 +5,8 @@ import Phone from '../../../app/assets/images/mate_30.jpg'
 import FooterContianer from '../welcome/footer_container';
 import ReviewsIndexContainer from '../reviews/reviews_index_container';
 import ReactStars from "react-rating-stars-component";
+import { withRouter } from 'react-router';
+
 
 
 
@@ -13,23 +15,41 @@ class ProductShow extends React.Component {
             super(props)
             this.state = {
                   quantity: 1,
+                  // overAllRating: 1,
                   reviews: this.props.reviews
             }
             this.qtyChange = this.qtyChange.bind(this)
             this.handleSubmit = this.handleSubmit.bind(this)
+            this.cartHasItems = this.cartHasItems.bind(this)
       }
       componentDidMount() {
           
-            this.props.fetchProduct(this.props.match.params.productId).then((res) => this.props.fetchReviews(this.props.match.params.productId).then((res) => this.forceUpdate()))
-            // this.props.fetchReviews(this.props.match.params.productId)
+            this.props.fetchProduct(this.props.match.params.productId);
+            this.props.fetchReviews(this.props.match.params.productId);
+            this.props.fetchCartItems();
       }
 
-      componentDidUpdate(prevProps) {
+      componentWillReceiveProps(nextProps) {
+           this.setState({reviews: nextProps.reviews})
+      }
+
+      componentDidUpdate(prevProps){
             if (prevProps.reviews.length !== this.props.reviews.length) {
                   this.setState({reviews: this.props.reviews})
             }
       }
       
+      cartHasItems() {
+            let check = false;
+            this.props.cartItems.forEach((cartItem) => {
+                  if (cartItem.productId === this.props.product.id) {
+                        check = true;
+                  } else {
+                        check = false;
+                  }
+            })
+            return check;
+      }
 
       qtyChange(e) {
             e.preventDefault();
@@ -41,28 +61,57 @@ class ProductShow extends React.Component {
             const cartItem = {
                   user_id: this.props.currentUser.id,
                   product_id: this.props.product.id,
-                  quantity: this.state.quantity
+                  quantity: parseInt(this.state.quantity)
             };
-            this.props.createCartItem(cartItem).then(() => this.props.history.push('/cart'));
+
+            let cartItemId;
+            this.props.cartItems.forEach((cartItem) => {
+                  if (cartItem.productId === this.props.product.id) {
+                        cartItemId = cartItem.id
+                  }
+            });
+
+            const currentItem = this.props.cartItems.filter(
+                  (cartItem) => cartItem.id === cartItemId
+            );
+
+            const currentQuantity = currentItem.length > 0 ? currentItem[0].quantity : 0;
+            // debugger
+            const updatedCartItem = {
+                  quantity: currentQuantity + parseInt(this.state.quantity),
+                  product_id: this.props.product.id,
+                  user_id: this.props.currentUser.id,
+                  id: cartItemId
+            }
+
+            if (this.cartHasItems()) {
+                  this.props.updateCartItem(updatedCartItem).then(() => this.props.history.push('/cart'))
+            } else {
+                  this.props.createCartItem(cartItem).then(() => this.props.history.push('/cart'));
+            }
+
       }
+
+
+     
 
       render() {
             const { product, reviews } = this.props;
             if (product === undefined) return null 
-            // let price = product.productPrice;
-            let ratingTotal = 0;
-            let overallRating = 1;
-            let productRating;
-            if (this.state.reviews.length !== 0) {
-
-                  this.state.reviews.forEach(review => {
-                        ratingTotal += review.rating
-                  });
-                  overallRating = Math.round(ratingTotal / this.state.reviews.length)
-                  productRating = <ReactStars count={5} value={overallRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
-            } 
-            console.log(overallRating);
            
+            let productRating;
+            if (reviews !== undefined) {
+
+                  let totalRating = 0;
+                  let overAllRating = 1;
+                  reviews.forEach(review => {
+                       totalRating += review.rating;
+                  });
+                  overAllRating = Math.round(totalRating / reviews.length)
+                  productRating = <ReactStars count={5} value={overAllRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
+                  console.log(overAllRating)
+            }
+            
                   return(
                   <div>
                         <header><WelcomeContainer/></header>
@@ -71,7 +120,8 @@ class ProductShow extends React.Component {
                               <div className="grid-show-1">
                                     <p className="product-show-name">{product.productName}</p>
                                     <div className=" show-rating">
-                                          {productRating}
+                                                {/* <ReactStars count={5} value={overAllRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" /> */}
+                                                {productRating}
                                     </div>
                                     <p className="product-show-lprice">List Price: <span>${((product.productPrice * 1.2).toFixed(2)) }</span></p>
                                     <p className="product-show-price">Price: <span>${(product.productPrice * 1).toFixed(2)}</span></p>
@@ -104,7 +154,7 @@ class ProductShow extends React.Component {
                                     <p className="regular-font">Ships from and sold by amaZone.com</p>
                               </div>
                         </div>
-                        <ReviewsIndexContainer product={this.props.product}/>
+                              <ReviewsIndexContainer product={this.props.product} key={ this.state.key}/>
                         {/* <Link to={`/products/${product.id}/reviews/create`}><button>Add a Review</button></Link>   */}
                         <FooterContianer/>
                   </div>
@@ -113,4 +163,4 @@ class ProductShow extends React.Component {
       }
 }
 
-export default ProductShow;
+export default withRouter(ProductShow);

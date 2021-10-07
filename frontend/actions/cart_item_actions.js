@@ -34,5 +34,9 @@ export const deleteCartItem = (cartItem) => dispatch => (
       CartItemAPIUtil.destroyCartItem(cartItem).then(cartItem => dispatch(removeCartItem(cartItem)))
 )
 
+export const updateCartItem = (cartItem) => (dispatch) => (
+      CartItemAPIUtil.updateCartItem(cartItem).then((cartItem) => dispatch(receiveCartItem(cartItem)))
+)
+
 
 
