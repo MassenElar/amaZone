@@ -1,6 +1,6 @@
 # README
 ## amaZone
-anmaZone is an E-commerce webiste inspired and clone based on Amazon that allows customers to purchase  electronics such as Smart Phones, Smart Tvs and so on, costumers will be allowed to add items to the cart, review and search any product.
+amaZone is an E-commerce webiste inspired and clone based on Amazon that allows customers to purchase  electronics such as Smart Phones, Smart Tvs and so on, costumers will be allowed to add items to the cart, review and search any product.
 
 [Live Site](https://amazone2.herokuapp.com/#/)
 
