@@ -23,7 +23,6 @@ class ProductShow extends React.Component {
             this.cartHasItems = this.cartHasItems.bind(this)
       }
       componentDidMount() {
-            debugger
             this.props.fetchProduct(this.props.match.params.productId);
             this.props.fetchReviews(this.props.match.params.productId);
             if (this.props.loggedIn) {
