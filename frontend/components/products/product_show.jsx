@@ -23,10 +23,14 @@ class ProductShow extends React.Component {
             this.cartHasItems = this.cartHasItems.bind(this)
       }
       componentDidMount() {
-          
+            debugger
             this.props.fetchProduct(this.props.match.params.productId);
             this.props.fetchReviews(this.props.match.params.productId);
-            this.props.fetchCartItems();
+            if (this.props.loggedIn) {
+
+                  this.props.fetchCartItems();
+            }
+            
       }
 
       componentWillReceiveProps(nextProps) {
@@ -39,59 +43,54 @@ class ProductShow extends React.Component {
             }
       }
       
-      cartHasItems() {
-            let check = false;
-            this.props.cartItems.forEach((cartItem) => {
-                  if (cartItem.productId === this.props.product.id) {
-                        check = true;
-                  } else {
-                        check = false;
-                  }
-            })
-            return check;
-      }
-
+      
       qtyChange(e) {
             e.preventDefault();
             this.setState({quantity: e.target.value})
       }
-
+      
+      cartHasItems() {
+           return this.props.cartItems.some((cartItem) => (cartItem.productId === this.props.product.id))                             
+      }
+      
       handleSubmit(e) {
             e.preventDefault();
-            if (!this.props.currentUser) {
+            if (!this.props.loggedIn) {
                   this.props.history.push("/login");
-            }
-            const cartItem = {
-                  user_id: this.props.currentUser,
-                  product_id: this.props.product.id,
-                  quantity: parseInt(this.state.quantity)
-            };
+            } else {
+                  const cartItem = {
+                        user_id: this.props.currentUser.id,
+                        product_id: this.props.product.id,
+                        quantity: parseInt(this.state.quantity)
+                  };
 
-            let cartItemId;
-            this.props.cartItems.forEach((cartItem) => {
-                  if (cartItem.productId === this.props.product.id) {
+                  let cartItemId;
+                  this.props.cartItems.forEach((cartItem) => {
+                        if (cartItem.productId === this.props.product.id) {
                         cartItemId = cartItem.id
                   }
-            });
+                  });
 
-            const currentItem = this.props.cartItems.filter(
-                  (cartItem) => cartItem.id === cartItemId
-            );
+                  const currentItem = this.props.cartItems.filter(
+                        (cartItem) => cartItem.id === cartItemId
+                  );
 
-            const currentQuantity = currentItem.length > 0 ? currentItem[0].quantity : 0;
+                  const currentQuantity = currentItem.length > 0 ? currentItem[0].quantity : 0;
             // debugger
-            const updatedCartItem = {
-                  quantity: currentQuantity + parseInt(this.state.quantity),
-                  product_id: this.props.product.id,
-                  user_id: this.props.currentUser,
-                  id: cartItemId
-            }
+                  const updatedCartItem = {
+                        quantity: currentQuantity + parseInt(this.state.quantity),
+                        product_id: this.props.product.id,
+                        user_id: this.props.currentUser.id,
+                        id: cartItemId
+                  }
 
-            if (this.cartHasItems()) {
-                  this.props.updateCartItem(updatedCartItem).then(() => this.props.history.push('/cart'))
-            } else {
-                  this.props.createCartItem(cartItem).then(() => this.props.history.push('/cart'));
+                  if (this.cartHasItems()) {
+                        this.props.updateCartItem(updatedCartItem).then(() => this.props.history.push('/cart'))
+                  } else {
+                        this.props.createCartItem(cartItem).then(() => this.props.history.push('/cart'));
+                  }
             }
+            
 
       }
 
