@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
       end
 
       def ensure_logged_in! 
-            redirect_to api_session_url if current_user.nil?
+            render json: ['No user logged in'], status: 401 if current_user.nil?
       end
 end

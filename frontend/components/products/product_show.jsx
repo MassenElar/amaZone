@@ -58,8 +58,11 @@ class ProductShow extends React.Component {
 
       handleSubmit(e) {
             e.preventDefault();
+            if (!this.props.currentUser) {
+                  this.props.history.push("/login");
+            }
             const cartItem = {
-                  user_id: this.props.currentUser.id,
+                  user_id: this.props.currentUser,
                   product_id: this.props.product.id,
                   quantity: parseInt(this.state.quantity)
             };
@@ -80,7 +83,7 @@ class ProductShow extends React.Component {
             const updatedCartItem = {
                   quantity: currentQuantity + parseInt(this.state.quantity),
                   product_id: this.props.product.id,
-                  user_id: this.props.currentUser.id,
+                  user_id: this.props.currentUser,
                   id: cartItemId
             }
 
@@ -132,7 +135,7 @@ class ProductShow extends React.Component {
                                     <p className="free-return">& FREE Return</p>
                                     <p><span className="free-return">FREE delivery</span></p>
                                     <p>Fast delivery: <span className="fast-delivery">Tomorrow</span></p>
-                                    <p className="deliver-to"><i className="fa fa-map-marker"></i>Deliver to { this.props.currentUser.username}</p>
+                                    <p className="deliver-to"><i className="fa fa-map-marker"></i>Deliver to { this.props.loggedIn ? this.props.currentUser.username : null }</p>
                                     <p className="product-show-invetory">{product.productInventory} Items left.</p>
                                     <form className="buttons" onSubmit={this.handleSubmit}>
                                           <div>

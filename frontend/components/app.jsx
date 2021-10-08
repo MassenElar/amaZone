@@ -18,12 +18,13 @@ const App = () => (
         <Switch>
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-          <ProtectedRoute exact path="/products/:productId" component={ProductShowContainer}/>
+          {/* <ProtectedRoute exact path="/products/:productId" component={ProductShowContainer}/> */}
           <ProtectedRoute exact path="/products/:productId/reviews/:reviewId/update" component={UpdateFormContainer}/>
           <ProtectedRoute exact path="/products/:productId/reviews/create" component={ReviewFormContainer} />
           <ProtectedRoute exact path="/cart" component={CartItemContainer} />
           <Route exact path="/" component={ProductIndexContainer} />
           <Route exact path="/search" component={SearchResultContainer} />
+          <Route exact path="/products/:productId" component={ProductShowContainer}/>
         </Switch>
             
   </div>

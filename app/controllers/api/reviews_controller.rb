@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-      before_action :ensure_logged_in!, only: [:index, :show, :create, :update, :destroy]
+      before_action :ensure_logged_in!, only: [:create, :update, :destroy]
       def index
             @product = Product.find(params[:product_id])
             @reviews = @product.reviews

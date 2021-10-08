@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-      before_action :ensure_logged_in!, only: [:show] 
+      
 
       def index 
             @products = word ? Product.search(word) : Product.all

@@ -1,6 +1,6 @@
 # README
 ## amaZone
-anmaZone is an E-commerce webiste inspired and clone based on Amazon that allows customers to purchase  electronics such as Smart Phones, Smart Tvs and so on, costumers will be allowed to add items to the cart and review any product.
+anmaZone is an E-commerce webiste inspired and clone based on Amazon that allows customers to purchase  electronics such as Smart Phones, Smart Tvs and so on, costumers will be allowed to add items to the cart, review and search any product.
 
 [Live Site](https://amazone2.herokuapp.com/#/)
 
@@ -15,9 +15,10 @@ anmaZone is an E-commerce webiste inspired and clone based on Amazon that allows
 
 ## Features
 In this clone i have implemented two CRUD functionalities, shopping cart and Reviews 
-* Cart:  customers will be able to add and delete any item 
+* Cart:  customers will be able to add and delete any item when they are logged in 
 * Reviews : customers will be able to review any item and giving it a rating, all customers can see other customers reviews, but they are only allowed to delete or update thier own reviews 
-
+* Search: users will be able to search any item by queyring on the backend to make the app lightweight and faster  
+![](app/assets/images/gifReadme.gif)
 ![](app/assets/images/scr1.png)
 ![](app/assets/images/scr2.png)
 
