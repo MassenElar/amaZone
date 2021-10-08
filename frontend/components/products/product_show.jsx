@@ -95,6 +95,11 @@ class ProductShow extends React.Component {
 
       }
 
+      handleBuy(e) {
+            e.preventDefault()
+            this.props.history.push('/success');
+      }
+
 
      
 
@@ -152,8 +157,8 @@ class ProductShow extends React.Component {
                                                 </label> 
                                           </div>
                                           <button type="submit" className="show-button-1">Add to Cart</button>
-                                          <button className="show-button-2">Buy Now</button>
                                     </form>
+                                          <button className="show-button-2" onClick={(e) => this.handleBuy(e)}>Buy Now</button>
                                     <p className="regular-font">Ships from and sold by amaZone.com</p>
                               </div>
                         </div>
