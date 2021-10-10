@@ -18,6 +18,13 @@ class CartItems extends React.Component {
             this.props.fetchCartItems();
       }
 
+      // componentDidUpdate(prevProp) {
+      //       if (this.props.cartItems !== prevProp.cartItems) {
+
+      //             this.props.fetchCartItems()
+      //       }
+      // }
+
       removeAll() {
             this.props.cartItems.forEach(cartItem => {
                   this.props.deleteCartItem(cartItem)
@@ -25,20 +32,40 @@ class CartItems extends React.Component {
             this.setState({checkoutSuccess: <p className="checkout-success">Your Order is Confirmed!</p>})
       }
 
-
-      render() {
+      totalSum() {
             let sum = 0;
+        
             this.props.cartItems.forEach(cartItem => {
-                  sum += (parseFloat(cartItem.productPrice) * cartItem.quantity)
+                  if (cartItem.productPrice !== undefined) {
+                        sum += (parseFloat(cartItem.productPrice) * cartItem.quantity)
+                  }
             });
-            
+            return sum 
+      }
+
+      qtySum() {
             let sumQty = 0;
             this.props.cartItems.forEach(cartItem => {
                   sumQty += cartItem.quantity
             });
+            return sumQty
+      }
 
 
-            const total = (sum * 1).toFixed(2);
+      render() {
+            // if (this.props.cartItems.length === 0) return null
+            // let sum = 0;
+            // this.props.cartItems.forEach(cartItem => {
+            //       sum += (parseFloat(cartItem.productPrice) * cartItem.quantity)
+            // });
+            
+            // let sumQty = 0;
+            // this.props.cartItems.forEach(cartItem => {
+            //       sumQty += cartItem.quantity
+            // });
+
+
+            // const total = (sum * 1).toFixed(2);
 
             // if (this.props.cartItems.length === 0) {
             //       return (
@@ -63,12 +90,12 @@ class CartItems extends React.Component {
                                                       </div> :
                               
                                                             this.props.cartItems.map((cartItem) => (
-                                                                  <CartItemsShow key={cartItem.id} cartItem={cartItem} deleteCartItem={this.props.deleteCartItem} />
+                                                                  <CartItemsShow key={cartItem.id} cartItem={cartItem} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem} fetchCartItem={this.props.fetchCartItem}/>
                                                             ))
                                                       }
                                           </ul>
                                           <div className="subtotal">
-                                                <p>Subtotal({sumQty} item):<span className="bold-price"> ${total }</span></p>
+                                                <p>Subtotal({this.qtySum()} item):<span className="bold-price"> ${(this.totalSum() * 1).toFixed(2) }</span></p>
                                           </div>
                                     </div>
                                     <div className="right-side-cart">
@@ -76,7 +103,7 @@ class CartItems extends React.Component {
                                                 <i className="fa fa-check-circle"></i>
                                                 <p>Your order qualifies for FREE Shipping.</p>
                                           </div>
-                                          <p>Subtotal({sumQty} item):<span className="bold-price"> ${total}</span></p>
+                                          <p>Subtotal({this.qtySum()} item):<span className="bold-price"> ${(this.totalSum() * 1).toFixed(2)}</span></p>
                                           {this.props.cartItems.length >= 1 ? <button className="checkout-button" onClick={this.removeAll}>Proceed to checkout</button> : null}
                                           { this.state.checkoutSuccess}
                                     </div>

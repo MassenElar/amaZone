@@ -15,6 +15,10 @@ class ReviewForm extends React.Component {
             this.props.processForm(this.state, this.props.productId).then(() => this.props.history.push(`/products/${this.props.productId}`))
       }
 
+      componentWillUnmount() {
+            location.reload();
+      }
+
 
       update(field) {
             return (e) => {

@@ -4,7 +4,7 @@ import WelcomeContainer from '../welcome/welcome_container';
 import Phone from '../../../app/assets/images/mate_30.jpg'
 import FooterContianer from '../welcome/footer_container';
 import ReviewsIndexContainer from '../reviews/reviews_index_container';
-import ReactStars from "react-rating-stars-component";
+import StarRatingComponent from 'react-star-rating-component'
 import { withRouter } from 'react-router';
 
 
@@ -15,7 +15,7 @@ class ProductShow extends React.Component {
             super(props)
             this.state = {
                   quantity: 1,
-                  // overAllRating: 1,
+                  overAllRating: 5,
                   reviews: this.props.reviews
             }
             this.qtyChange = this.qtyChange.bind(this)
@@ -24,7 +24,7 @@ class ProductShow extends React.Component {
       }
       componentDidMount() {
             this.props.fetchProduct(this.props.match.params.productId);
-            this.props.fetchReviews(this.props.match.params.productId);
+            this.props.fetchReviews(this.props.match.params.productId)
             if (this.props.loggedIn) {
 
                   this.props.fetchCartItems();
@@ -32,14 +32,20 @@ class ProductShow extends React.Component {
             
       }
 
-      componentWillReceiveProps(nextProps) {
-           this.setState({reviews: nextProps.reviews})
+      // componentWillReceiveProps(nextProps) {
+      //      this.setState({reviews: nextProps.reviews})
+      // }
+
+      componentDidUpdate(nextProps){
+            if (nextProps.reviews.length !== this.props.reviews.length) {
+                
+                  this.setState({overAllRating: this.renderRating()})
+            }
+            
       }
 
-      componentDidUpdate(prevProps){
-            if (prevProps.reviews.length !== this.props.reviews.length) {
-                  this.setState({reviews: this.props.reviews})
-            }
+      componentWillUnmount() {
+            location.reload()
       }
       
       
@@ -75,7 +81,7 @@ class ProductShow extends React.Component {
                   );
 
                   const currentQuantity = currentItem.length > 0 ? currentItem[0].quantity : 0;
-            // debugger
+          
                   const updatedCartItem = {
                         quantity: currentQuantity + parseInt(this.state.quantity),
                         product_id: this.props.product.id,
@@ -98,25 +104,51 @@ class ProductShow extends React.Component {
             this.props.history.push('/success');
       }
 
+      renderRating() {
+            // let productRating;
+            const { product, reviews } = this.props;
+            let totalRating = 0;
+            let overAllRating = 1;
+            if (reviews.length !== 0) {
+
+                  reviews.forEach(review => {
+                        if (review.rating !== undefined) {
+                              
+                              totalRating += review.rating;
+                        }
+                  });
+                  overAllRating = Math.round(totalRating / reviews.length)
+                  // productRating = <ReactStars count={5} value={overAllRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
+                 
+            }
+            return overAllRating
+      }
+
 
      
 
       render() {
             const { product, reviews } = this.props;
-            if (product === undefined) return null 
-           
-            let productRating;
-            if (reviews !== undefined) {
+            if (product === undefined) return null
+            // let productRating = (<ReactStars count={5} value={this.renderRating()} size={20} edit={false} isHalf={true} activeColor="#ffd700" />)
+            // if (!this.renderRating()) {
+            //      productRating.push(<ReactStars count={5} value={this.renderRating()} size={20} edit={false} isHalf={true} activeColor="#ffd700" />)
+            // }
+            // let productRating;
+            // let totalRating = 0;
+            // let overAllRating = 1;
+            // if (reviews !== undefined) {
 
-                  let totalRating = 0;
-                  let overAllRating = 1;
-                  reviews.forEach(review => {
-                       totalRating += review.rating;
-                  });
-                  overAllRating = Math.round(totalRating / reviews.length)
-                  productRating = <ReactStars count={5} value={overAllRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
-                  console.log(overAllRating)
-            }
+            //       reviews.forEach(review => {
+            //             if (review.rating !== undefined) {
+            //                  
+            //                   totalRating += review.rating;
+            //             }
+            //       });
+            //       overAllRating = Math.round(totalRating / reviews.length)
+            //       productRating = <ReactStars count={5} value={overAllRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" />
+            //       
+            // }
             
                   return(
                   <div>
@@ -126,8 +158,7 @@ class ProductShow extends React.Component {
                               <div className="grid-show-1">
                                     <p className="product-show-name">{product.productName}</p>
                                     <div className=" show-rating">
-                                                {/* <ReactStars count={5} value={overAllRating} size={20} edit={false} isHalf={true} activeColor="#ffd700" /> */}
-                                                {productRating}
+                                                <StarRatingComponent name="rate1" starCount={5} value={this.state.overAllRating} editing={false} />
                                     </div>
                                     <p className="product-show-lprice">List Price: <span>${((product.productPrice * 1.2).toFixed(2)) }</span></p>
                                     <p className="product-show-price">Price: <span>${(product.productPrice * 1).toFixed(2)}</span></p>
@@ -142,15 +173,15 @@ class ProductShow extends React.Component {
                                     <p className="product-show-invetory">{product.productInventory} Items left.</p>
                                     <form className="buttons" onSubmit={this.handleSubmit}>
                                           <div>
-                                                <label htmlFor="qty">Qty:      
+                                                <label className="qty" htmlFor="qty">    
                                                       <select id="qty" onChange={this.qtyChange} value={this.state.quantity }> 
-                                                            <option value={1}>1</option>
-                                                            <option value={2}>2</option>
-                                                            <option value={3}>3</option>
-                                                            <option value={4}>4</option>
-                                                            <option value={5}>5</option>
-                                                            <option value={6}>6</option>
-                                                            <option value={7}>7</option>
+                                                            <option value={1}>Qty: 1</option>
+                                                            <option value={2}>Qty: 2</option>
+                                                            <option value={3}>Qty: 3</option>
+                                                            <option value={4}>Qty: 4</option>
+                                                            <option value={5}>Qty: 5</option>
+                                                            <option value={6}>Qty: 6</option>
+                                                            <option value={7}>Qty: 7</option>
                                                       </select>
                                                 </label> 
                                           </div>
