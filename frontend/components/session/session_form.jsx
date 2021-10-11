@@ -51,14 +51,14 @@ class SessionForm extends React.Component {
       render() {
             let username;
             let demoUser;
-            let singUpButton
+            let singUpButton;
            if (this.props.formType === 'Sign-Up') {
                  username = <div>
                   <label className="label" htmlFor="username">Username
                   </label> 
                        <br/>
                   <input
-                        className="input"
+                        className={this.props.errors.length === 0 ? 'input' : 'input error-red'}
                         id="username"
                         type="text"
                         value={this.state.username}
@@ -103,6 +103,7 @@ class SessionForm extends React.Component {
                   {demoUser}
                   {singUpButton}
                   <p className="user-conditions">By continuing, you agree to amaZon's Conditions of Use and Privacy Notice</p>
+                  {this.props.formType === 'Sign-Up' ? <p className="user-conditions">Already have an account? <Link className="sgnLink" to="/login"><span>Sign-In</span></Link></p> : null}
               </form>
           </div>
       </div>
