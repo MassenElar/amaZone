@@ -17,18 +17,27 @@ amaZone is an E-commerce webiste inspired and clone based on Amazon that allows 
 In this clone i have implemented two CRUD functionalities, shopping cart and Reviews
 ### Authentication
 * Users can create and login to thier accounts 
+
 ![](app/assets/images/gifAuth.gif)
+
 ### Product 
 * Each product has its own show page where users can see the product details, reviews and also the ability to add to cart
+
 ![](app/assets/images/gifProduct.gif) 
+
 ### Cart  
 * Customers will be able to add and delete any item when they are logged in 
+
 ![](app/assets/images/gifCart.gif)
+
 ### Reviews  
 * customers will be able to review any item and giving it a rating, all customers can see other customers reviews, but they are only allowed to delete or update thier own reviews
+
 ![](app/assets/images/gifReviews.gif) 
+
 ### Search 
 * users will be able to search any item by queyring on the backend to make the app lightweight and faster  
+
 ![](app/assets/images/gifSearch1.gif)
 
 ## Key Feature  
