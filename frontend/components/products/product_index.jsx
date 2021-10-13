@@ -45,6 +45,14 @@ class ProductIndex extends React.Component {
                                     <div className="product-group2">
                                           <ul className="product-ul3">
                                                 {this.props.products.map((product) => (
+                                                      (product.productCategory === 'Tablettes') ?
+                                                      
+                                                            <ProductIndexItem key={product.id} product={product} /> : null 
+                                                      
+                                                ))}
+                                          </ul>
+                                          <ul className="product-ul3">
+                                                {this.props.products.map((product) => (
                                                       (product.productCategory === 'Smart Tvs') ?
                                                       
                                                             <ProductIndexItem key={product.id} product={product} /> : null 
@@ -58,7 +66,6 @@ class ProductIndex extends React.Component {
                                                       
                                                 ))}
                                           </ul>
-
                                     </div>
                               </div>
                         </div>

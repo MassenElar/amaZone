@@ -16,7 +16,7 @@ demoUser = User.create(
       password: 'password'
 )
 
-
+# Smart Phones
 product1 = Product.create(
       product_name: 'Samsung A71',
       product_description: 'Display: 6.7 inches Super AMOLED capacitive touchscreen w/ Corning Gorilla Glass 3, Resolution: 1080 x 2400 pixels
@@ -83,6 +83,33 @@ product4 = Product.create!(
 file4 = URI.open('https://amazone-seeds.s3.amazonaws.com/mate_30.jpg')
 product4.photo.attach(io: file4, filename: 'mate_30.jpg')
 
+product41 = Product.create!(
+      product_name: 'Iphone 12',
+      product_description: 'Display: 6.7 6.1-inch Liquid Retina HD display with True Tone. All-glass and aluminum design, water and dust resistant rated IP68. Dual 12MP cameras with Portrait mode, Depth Control, Portrait Lighting, Smart HDR, and 4K video up to 60 fps. 12MP TrueDepth front camera with Portrait mode, Depth Control, Portrait Lighting, and Smart HDR. International Variant/US Compatible LTE',
+      product_inventory: 50,
+      product_price: 544.00,
+      product_category: "Smart Phone",
+      seller_id: 3,
+
+)
+file41 = URI.open('https://amazone-seeds.s3.amazonaws.com/iphone12.jpg')
+product41.photo.attach(io: file41, filename: 'iphone12.jpg')
+
+
+product51 = Product.create!(
+      product_name: 'Iphone 12 Pro Max',
+      product_description: 'Fully unlocked and compatible with any carrier of choice e.g. AT&T, T-Mobile, Sprint, Verizon, US-Cellular, Cricket, Metro, etc.. The device does not come with headphones or a SIM card. It does include a charger and charging cable that may be generic. Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm`s length. Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information. Tested for battery health and guaranteed to have a minimum battery capacity of 80%.',
+      product_inventory: 50,
+      product_price: 900.99,
+      product_category: "Smart Phone",
+      seller_id: 3,
+)
+
+file51 = URI.open('https://amazone-seeds.s3.amazonaws.com/phone51.jpg')
+product51.photo.attach(io: file51, filename: 'phone51.jpg')
+
+# Laptops
+
 product5 = Product.create!(
       product_name: 'Lenovo Chromebook Flex 5 13" Laptop',
       product_description: "With the Lenovo Chromebook Flex 5 laptop, you'll enjoy more productivity with less complexity. This 13-inch Chromebook, powered by 10th Generation Intel Core i3 processors, boasts up to 10 hours of battery life to let you get things done quickly and easily with all your favorite Chromebook features. Powered by Chrome OS and designed to integrate easily with your Google account, just turn it on, log in, and you have access to all your shared files, photos, music, and documents! Of course, productivity is about more than efficiency – it's also about safety. This touchscreen Chromebook updates automatically every six weeks to help protect you from online threats. Plus, the verified boot process looks for malicious changes that might put your data in danger, whether you're working from home or out in the world. Combine that with a battery that lasts up to 10 hours, and you'll always be ready. A great Chromebook for college.",
@@ -138,7 +165,67 @@ Great for students, travelers, and those who like to work from home or the local
 file8 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop4.jpg')
 product8.photo.attach(io: file8, filename: 'laptop4.jpg')
 
+product81 = Product.create!(
+      product_name: 'HP Pavilion 15',
+      product_description: "POWERFUL PERFORMANCE: The HP Pavilion Laptop is powered with the latest 10th Gen Intel Quad-Core i5-1035G1 Processor (Eight-way processing, Up to 3.6GHz) and 16GB high-bandwidth DDR4 memory, powerful processing for advanced multitasking, demanding computing, smooth gaming, multiple tabs browsing, and everyday tasks. 512GB PCIe NVMe M.2 SSD (15x faster than HDD, stay cool and quiet) offers ample storage, quick boot-up times, fast data access, and improves the overall performance",
+      product_inventory: 23,
+      product_price: 899.99,
+      product_category: "Laptops",
+      seller_id: 2,
 
+)
+file81 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop81.jpg')
+product81.photo.attach(io: file81, filename: 'laptop81.jpg')
+
+product82 = Product.create!(
+      product_name: 'Dell Xps',
+      product_description: "POWERFUL PERFORMANCE: The Dell Xps Laptop is powered with the latest 10th Gen Intel Quad-Core i5-1035G1 Processor (Eight-way processing, Up to 3.6GHz) and 16GB high-bandwidth DDR4 memory, powerful processing for advanced multitasking, demanding computing, smooth gaming, multiple tabs browsing, and everyday tasks. 512GB PCIe NVMe M.2 SSD (15x faster than HDD, stay cool and quiet) offers ample storage, quick boot-up times, fast data access, and improves the overall performance",
+      product_inventory: 23,
+      product_price: 1699.99,
+      product_category: "Laptops",
+      seller_id: 2,
+
+)
+file82 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop82.jpg')
+product82.photo.attach(io: file82, filename: 'laptop82.jpg')
+
+product83 = Product.create!(
+      product_name: 'HP Pavilion 15',
+      product_description: "Thin, light, and stylish – This 2-in-1 laptop weighs just 3.64 pounds and is only 0.82 inch thick. It's soft and comfortable to the touch, with a durable paint that creates a better user experience. Digital pen included. The 10-point, 14-inch FHD 1920 x 1080 IPS touchscreen allows the Lenovo Flex 5 14 inch 2-in-1 laptop to be comfortable, fun, and easy to use. It's also great to look at, with 4-side narrow bezels",
+      product_inventory: 23,
+      product_price: 899.99,
+      product_category: "Laptops",
+      seller_id: 2,
+
+)
+file83 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop83.jpg')
+product83.photo.attach(io: file83, filename: 'laptop83.jpg')
+
+product84 = Product.create!(
+      product_name: 'Lenovo Flex 5',
+      product_description: "Thin, light, and stylish – This 2-in-1 laptop weighs just 3.64 pounds and is only 0.82 inch thick. It's soft and comfortable to the touch, with a durable paint that creates a better user experience. Digital pen included. The 10-point, 14-inch FHD 1920 x 1080 IPS touchscreen allows the Lenovo Flex 5 14 inch 2-in-1 laptop to be comfortable, fun, and easy to use. It's also great to look at, with 4-side narrow bezels",
+      product_inventory: 23,
+      product_price: 698.99,
+      product_category: "Laptops",
+      seller_id: 2,
+
+)
+file84 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop84.jpg')
+product84.photo.attach(io: file84, filename: 'laptop84.jpg')
+
+product85 = Product.create!(
+      product_name: 'Lenovo Ideapad 3 ',
+      product_description: "AMD Ryzen 5 5500U 6-Core, 2.1GHz Up to 4.0 GHz, 8 MB Cache. Equipped with AMD Ryzen 5 5500U processor, up to 12 Hours long battery life, and speedy connectivity. 15.6” FHD Display 15.6 inch Full HD (1920x1080) LED Anti-Glare Display. Watch what you love in all its clarity with detail and saturated colors from edge to edge thanks to the 15.6 inch FHD display.laptopUpgraded to 20GB RAM Adequate high-bandwidth RAM to smoothly run multiple applications and browser tabs at the same time. It gives you enormous space to save all of your files. Enhance the overall performance of the laptop for business, student, daily usage.",
+      product_inventory: 23,
+      product_price: 719.99,
+      product_category: "Laptops",
+      seller_id: 2,
+
+)
+file85 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop85.jpg')
+product85.photo.attach(io: file85, filename: 'laptop85.jpg')
+
+# Smart TVs
 
 product9 = Product.create!(
       product_name: 'SAMSUNG UHD AU8000 Series',
@@ -196,6 +283,7 @@ product12 = Product.create!(
 file12 = URI.open('https://amazone-seeds.s3.amazonaws.com/tv4.jpg')
 product12.photo.attach(io: file12, filename: 'tv4.jpg')
 
+# Smart Watches
 
 product13 = Product.create!(
       product_name: 'Smart Watch for Women, AGPTEK',
@@ -250,6 +338,58 @@ product16 = Product.create!(
 )
 file16 = URI.open('https://amazone-seeds.s3.amazonaws.com/watch4.jpg')
 product16.photo.attach(io: file16, filename: 'watch4.jpg')
+
+
+
+# Tablette 
+product100 = Product.create!(
+      product_name: 'SAMSUNG Galaxy Tab S7 ',
+      product_description: "PC PERFORMANCE. TABLET PORTABILITY: Transform your tablet into a PC experience with DeX mode and the optional keyboard¹ with expanded trackpad.Keyboard sold separately. ENTERTAINMENT, UPGRADED: Experience cinematic viewing with larger edge-to-edge displays, TFT LCD screen, and AKG quad speakers with Dolby Atmos Surround sound. REDESIGNED S PEN INCLUDED: With improved 9ms Pen latency, the redesigned S Pen can control presentations and take notes effortlessly.",
+      product_inventory: 23,
+      product_price: 649.88,
+      product_category: "Tablettes",
+      seller_id: 6,
+
+)
+file100 = URI.open('https://amazone-seeds.s3.amazonaws.com/tab1.jpg')
+product100.photo.attach(io: file100, filename: 'tab1.jpg')
+
+product101 = Product.create!(
+      product_name: 'Samsung Galaxy Tab A7',
+      product_description: "SLIM, STYLISH DESIGN: Stream and browse on a 10.4-inch ultra-widescreen display designed to bring your content to life without weighing you down. The front-facing, landscape-oriented camera allows you to transition between entertainment and video calls seamlessly. DOLBY ATMOS SURROUND SOUND: With an enhanced quad speaker system that plays everything in Dolby Atmos surround sound, you’ll always feel like you’re listening from the front row.",
+      product_inventory: 23,
+      product_price: 179.88,
+      product_category: "Tablettes",
+      seller_id: 6,
+
+)
+file101 = URI.open('https://amazone-seeds.s3.amazonaws.com/tab2.jpg')
+product101.photo.attach(io: file101, filename: 'tab2.jpg')
+
+product102 = Product.create!(
+      product_name: 'MEBERRY 10 inch',
+      product_description: "PACKAGE INCLUDES M7 tablet | Case for tablet 2-1 | Bluetooth keyboard | 2.4G wireless mouse | Type-C to USB Adapter | Protective film | Capacitive pen | Instruction manual | USA standard charger | Type C Data Cable - MEBERRY M7Android Tablet is the best gift for your lover ANDROID 10.0 4 GB RAM MEBERRY 10.1-inch tablet with integrated 4 GB operating memory and 64 GB storage memory - up to 128 GB (4--128 GB, applicable), screen resolution 1280x800 IPS and support 8000 mAh battery 7-8 hours video playback (720P and 1080P); 5.0 + 8.0 MP camera support, tablet with dual stereo speakers and fast-transmitting Type C data interface support, TF Card | WIFI | GPS accurate | Bluetooth 4.0 support",
+      product_inventory: 23,
+      product_price: 150.88,
+      product_category: "Tablettes",
+      seller_id: 6,
+
+)
+file102 = URI.open('https://amazone-seeds.s3.amazonaws.com/tab3.jpg')
+product102.photo.attach(io: file102, filename: 'tab3.jpg')
+
+product103 = Product.create!(
+      product_name: 'Microsoft Surface Pro 7',
+      product_description: "Next-gen, best-in-class laptop with the versatility of a studio and tablet, so you can type, touch, draw, write, work, and play more naturally Faster than. Surface Pro 6, with a 10th Gen Intel Core Processor – redefining what’s possible in a thin and light computer. More ways to connect, with both USB-C and USB-A ports for connecting to displays, docking stations and more, as well as accessory charging",
+      product_inventory: 23,
+      product_price: 1700.99,
+      product_category: "Tablettes",
+      seller_id: 6,
+
+)
+file103 = URI.open('https://amazone-seeds.s3.amazonaws.com/tab4.jpg')
+product103.photo.attach(io: file103, filename: 'tab4.jpg')
+
 
 # rm = RestClient.get "https://amazon24.p.rapidapi.com/api/product?keyword=smart%20phones&country=US&page=1&rapidapi-key=09dd4e2194msh9755f661cf6a433p1f0588jsnb19ace1119cd"
 # rm_array = JSON.parse(rm)["docs"]

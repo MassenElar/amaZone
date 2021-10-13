@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { Input } from '@material-ui/core';
+import Badge from '@mui/material/Badge'
+import { yellow } from '@mui/material/colors';
+import SuggestSearch from './suggest_search';
+import { Search } from '@mui/icons-material';
+
 // import logo from '../../../amaZoneLogo1.png'
 
 
@@ -10,10 +15,28 @@ class Welcome extends React.Component {
             super(props)
             this.state = {
                   show: false,
-                  word: ''
+                  word: '',
+                  isHidden: false,
+                  suggestions: [],
             }
+            this.suggest = [
+                  'Phones',
+                  'Smart Tvs',
+                  'Tablettes',
+                  'Dell',
+                  'Samsung',
+                  'Smart Waches',
+                  'Laptops',
+                  'Lenovo',
+                  'Apple',
+                  'Iphone',
+                  'Huawei'
+            ]
             this.whenHover = this.whenHover.bind(this);
             this.HandleSearch = this.HandleSearch.bind(this)
+      }
+      componentDidMount() {
+            this.props.fetchCartItems()
       }
 
       whenHover(e) {
@@ -31,9 +54,45 @@ class Welcome extends React.Component {
             
             this.setState({ word: '' });
       }
+
+      toggleIsHidden() {
+            this.setState((currentState) => ({
+                  isHidden: !currentState.isHidden
+            }));
+      }
+
+      onTextChanged = (e) => {
+            const value = e.target.value;
+            let suggestions = [];
+            if (value.length > 0) {
+                  const regex = new RegExp(`^${value}`, 'i');
+                  suggestions = this.suggest.sort().filter(v => regex.test(v));
+            }
+            this.setState(() => ({ suggestions, word: value }));
+      }
+
+      suggestionSelect (value) {
+            this.setState(() => ({
+                  word: value,
+                  suggestions: []
+            }))
+      }
+
+      renderSuggest() {
+            const { suggestions } = this.state;
+            if (suggestions.length === 0) {
+                  return null
+            }
+            return (
+                  <ul className="suggested_words">
+                        {suggestions.map((ele) => <li onClick={() => this.suggestionSelect(ele)}>{ ele }</li>)}
+                  </ul>
+            )
+      }
+      
       
       render(){
-            const { currentUser, logout } = this.props
+            const { currentUser, logout, cartItems } = this.props
             let user;
             let logOutButton;
             let signInButton;
@@ -62,7 +121,12 @@ class Welcome extends React.Component {
             //             </div>
             //       )
             // }
-
+            let cartCount = 0;
+            if (currentUser && cartItems.length !== 0) {
+                  cartItems.forEach(cartItem => {
+                        cartCount += cartItem.quantity
+                  }); 
+            }
             return (
                   <div>
                         <nav className="navbar">
@@ -77,8 +141,21 @@ class Welcome extends React.Component {
                               </Link>
                               
                               <form className="search" onSubmit={this.HandleSearch}>
-                                          <input type="text" className="search-input" value={this.state.word} onChange={this.inputChange('word')}>
-                                          </input>
+                                          {/* <div className='search-div'> */}
+                                                {/* <input type="text" className="search-input" name="select" list='select'  value={this.state.word} onChange={this.inputChange('word')} onClick={() => this.toggleIsHidden()}>
+                                                
+                                                </input> */}
+                                                <input type="text" className="search-input" name="select" list='select'  value={this.state.word} onChange={this.onTextChanged} onClick={() => this.toggleIsHidden()}>
+                                                
+                                                </input>
+                                                {this.renderSuggest()}
+                                                {/* <datalist className="search-dropdown" id="select">
+                                                            <option value="Laptops"/>
+                                                            <option value="Smart Watches"/>
+                                                            <option value="Tvs"/>
+                                                            <option value="Phones"/>
+                                                </datalist> */}
+                                          {/* </div> */}
                                           <button className="search-button"><i type="submit" className="fa fa-search" aria-hidden="true"></i></button>
                               </form>
                               
@@ -106,7 +183,9 @@ class Welcome extends React.Component {
                                     </div>
                                     <Link to="/cart" className="signin-link">
                                           <div className="shopping-cart">
-                                                <i className="fa fa-shopping-cart"></i>
+                                                <Badge color="success" badgeContent={cartCount}>
+                                                      <i className="fa fa-shopping-cart"></i>
+                                                </Badge>
                                           </div>
                                     </Link>
                         
