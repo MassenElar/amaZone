@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import { Input } from '@material-ui/core';
 import Badge from '@mui/material/Badge'
-import { yellow } from '@mui/material/colors';
-import SuggestSearch from './suggest_search';
-import { Search } from '@mui/icons-material';
+
 
 // import logo from '../../../amaZoneLogo1.png'
 
