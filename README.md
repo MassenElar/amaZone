@@ -13,17 +13,26 @@ amaZone is an E-commerce webiste inspired and clone based on Amazon that allows 
 * AWS
 * Heroku 
 
-## Features
-In this clone i have implemented two CRUD functionalities, shopping cart and Reviews 
-* Cart:  customers will be able to add and delete any item when they are logged in 
-* Reviews : customers will be able to review any item and giving it a rating, all customers can see other customers reviews, but they are only allowed to delete or update thier own reviews 
-* Search: users will be able to search any item by queyring on the backend to make the app lightweight and faster  
-![](app/assets/images/gifReadme.gif)
-![](app/assets/images/scr1.png)
-![](app/assets/images/scr2.png)
+## Features and MVP list
+In this clone i have implemented two CRUD functionalities, shopping cart and Reviews
+### Authentication
+* Users can create and login to thier accounts 
+![](app/assets/images/gifAuth.gif)
+### Product 
+* Each product has its own show page where users can see the product details, reviews and also the ability to add to cart
+![](app/assets/images/gifProduct.gif) 
+### Cart  
+* Customers will be able to add and delete any item when they are logged in 
+![](app/assets/images/gifCart.gif)
+### Reviews  
+* customers will be able to review any item and giving it a rating, all customers can see other customers reviews, but they are only allowed to delete or update thier own reviews
+![](app/assets/images/gifReviews.gif) 
+### Search 
+* users will be able to search any item by queyring on the backend to make the app lightweight and faster  
+![](app/assets/images/gifSearch1.gif)
 
 ## Key Feature  
-Update Reviews was one of my favorite part of this project 
+Update Reviews was one of my favorite part of this project, in order to make my code clean i used one form for both create and update, but i was having a problem with the update, it wasn't updating the review, going through a debugger waterfall i figured out that i was't passing the right props form the update container to the form. keep in mind to always check your props and see if you are passing the right ones!!!  
 
 ```javascript
 class ReviewForm extends React.Component {

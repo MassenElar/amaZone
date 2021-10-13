@@ -190,7 +190,7 @@ file82 = URI.open('https://amazone-seeds.s3.amazonaws.com/laptop82.jpg')
 product82.photo.attach(io: file82, filename: 'laptop82.jpg')
 
 product83 = Product.create!(
-      product_name: 'HP Pavilion 15',
+      product_name: 'Dell inspiron',
       product_description: "Thin, light, and stylish – This 2-in-1 laptop weighs just 3.64 pounds and is only 0.82 inch thick. It's soft and comfortable to the touch, with a durable paint that creates a better user experience. Digital pen included. The 10-point, 14-inch FHD 1920 x 1080 IPS touchscreen allows the Lenovo Flex 5 14 inch 2-in-1 laptop to be comfortable, fun, and easy to use. It's also great to look at, with 4-side narrow bezels",
       product_inventory: 23,
       product_price: 899.99,
