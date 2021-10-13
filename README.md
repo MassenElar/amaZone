@@ -41,7 +41,7 @@ In this clone i have implemented two CRUD functionalities, shopping cart and Rev
 ![](app/assets/images/gifSearch1.gif)
 
 ## Key Feature  
-Update Reviews was one of my favorite part of this project, in order to make my code clean i used one form for both create and update, but i was having a problem with the update, it wasn't updating the review, going through a debugger waterfall i figured out that i was't passing the right props form the update container to the form. keep in mind to always check your props and see if you are passing the right ones!!!  
+Update Reviews was one of my favorite and challenging part of this project, in order to make my code clean i used one form for both create and update, but i was having a problem with the update, it wasn't updating the review, going through a debugger waterfall i figured out that i wasn't passing the right props form the update container to the form. keep in mind to always check your props and see if you are passing the right ones!!!  
 
 ```javascript
 class ReviewForm extends React.Component {
