@@ -32,9 +32,6 @@ class ProductShow extends React.Component {
             
       }
 
-      // componentWillReceiveProps(nextProps) {
-      //      this.setState({reviews: nextProps.reviews})
-      // }
 
       componentDidUpdate(nextProps){
             if (nextProps.reviews.length !== this.props.reviews.length) {

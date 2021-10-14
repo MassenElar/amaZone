@@ -13,10 +13,7 @@ class SearchResult extends React.Component {
             super(props)
       }
       
-      // componentDidMount() {
-      //       
-      //       // this.props.fetchProducts()
-      // }
+      
 
       render() {
             return (

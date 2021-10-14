@@ -18,12 +18,7 @@ class CartItems extends React.Component {
             this.props.fetchCartItems();
       }
 
-      // componentDidUpdate(prevProp) {
-      //       if (this.props.cartItems !== prevProp.cartItems) {
-
-      //             this.props.fetchCartItems()
-      //       }
-      // }
+      
 
       removeAll() {
             this.props.cartItems.forEach(cartItem => {

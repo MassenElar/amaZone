@@ -33,7 +33,9 @@ class Welcome extends React.Component {
             this.HandleSearch = this.HandleSearch.bind(this)
       }
       componentDidMount() {
-            this.props.fetchCartItems()
+            if (this.props.currentUser) {
+                  this.props.fetchCartItems()
+            }
       }
 
       whenHover(e) {

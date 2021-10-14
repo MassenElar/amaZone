@@ -10,9 +10,6 @@ class ReviewsIndex extends React.Component {
             this.props.fetchReviews(this.props.product.id)
       }
 
-      componentDidUpdate() {
-             
-      }
 
       render() {
             if (!this.props.reviews) return null
